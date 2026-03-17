@@ -1,0 +1,23 @@
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+
+# Python
+__pycache__/
+*.py[cod]
+*.env
+venv/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data outputs — add specific files you want to track explicitly
+data/*.csv
+data/*.json
+data/*.parquet
+
+# Temporary files
+*.tmp
+*.log
