@@ -37,13 +37,13 @@ Commissioned by Cardano DReps; delivered by IO and Cardano Community Members inc
 ```
 Beyond_MVG/
 ├── docs/                        # Core research documents (PDF)
-│   ├── M1-1D__Governance_Metrics_Manual_-_12-02-2025_-_Revised_Edition_docx.pdf
-│   ├── M1-1D__State_of_Governance_-_Report_Outline_-_12-02-2025_-_Revised_Edition_docx.pdf
-│   └── M1-1D__State_of_Governance_Measurement_Framework_-_12-02-2025_-_Revised_Edition_docx.pdf
+│   ├── Governance_Metrics_Manual.pdf
+│   ├── State_of_Governance_Report_Outline.pdf
+│   └── State_of_Governance_Measurement_Framework.pdf
 ├── data/                        # Data outputs and epoch snapshots (future)
 ├── code/                        # Metric calculation scripts (future)
 ├── .github/
-│   └── ISSUE_TEMPLATE/          # Templates for bug reports and feature requests
+│   └── ISSUE_TEMPLATE/          # Templates for feature requests
 ├── CHANGELOG.md                 # Version history and document updates
 ├── CONTRIBUTING.md              # How to contribute to this project
 ├── LICENSE                      # MIT License
@@ -54,7 +54,7 @@ Beyond_MVG/
 
 ## Core Documents
 
-### 1. [Governance Measurement Framework](docs/M1-1D__State_of_Governance_Measurement_Framework_-_12-02-2025_-_Revised_Edition_docx.pdf)
+### 1. [Governance Measurement Framework](docs/State_of_Governance_Measurement_Framework.pdf)
 The foundational research document presenting the rationale and theoretical basis for measuring Cardano governance. Organizes metrics into four interconnected categories rooted in OSCE democratic principles and empirical DAO research:
 
 - **Ada Holder Metrics** — Legitimacy & Participation
@@ -62,10 +62,10 @@ The foundational research document presenting the rationale and theoretical basi
 - **SPO Metrics** — Security & Oversight
 - **Constitutional Committee Metrics** — Constitutional Adherence & Veto Oversight
 
-### 2. [Governance Metrics Manual](docs/M1-1D__Governance_Metrics_Manual_-_12-02-2025_-_Revised_Edition_docx.pdf)
+### 2. [Governance Metrics Manual](docs/Governance_Metrics_Manual.pdf)
 Step-by-step technical guidance for calculating each metric. Intended for tooling providers and technical community members who want to independently implement or verify measurements. Covers data sources, SQL query logic, and visualization specifications for all 12 defined metrics.
 
-### 3. [State of Governance Report Outline](docs/M1-1D__State_of_Governance_-_Report_Outline_-_12-02-2025_-_Revised_Edition_docx.pdf)
+### 3. [State of Governance Report Outline](docs/State_of_Governance_Report_Outline.pdf)
 The template and structure for producing periodic State of Cardano Governance reports using the measurement framework. Defines sections covering methodology, key findings by GMF category, governance action analysis, and forward path recommendations.
 
 ---
