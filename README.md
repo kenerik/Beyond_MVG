@@ -31,6 +31,7 @@ Commissioned by Cardano DReps; delivered by IO and Cardano Community Members inc
 | Tevo Kask | — |
 
 Special thanks to everyone that contributed, had critical eyes, debated with us, responded to surveys,  and made this report possible.
+
 CIVICS Governance Health Working Group , Nicolas Cerny, Cathy Hermstad Patanakarun, Larisa Mcfarlane, Vaibhav Solanki, Thomas Lindseth, Mike Hornan, Cardano over coffee, 45B - Cardano Enablement, Epoch end, Cardano budget committee, Beatrice Anihiri, Will Eddie, Arman Abid. Van Rossem family, Cardano foundation, Charles Hoskinson and all employees at IOG, CIP-1694 contributors, 
 
 
