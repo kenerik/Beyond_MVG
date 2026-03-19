@@ -46,7 +46,7 @@ Beyond_MVG/
 │   ├── State_of_Governance_Report_Outline.pdf
 │   └── State_of_Governance_Measurement_Framework.pdf
 ├── data/                        # Data outputs and epoch snapshots (future)
-├── code/                        # Metric calculation scripts (future)
+├── setup-and-query/             # Metric calculation scripts (future)
 ├── .github/
 │   └── ISSUE_TEMPLATE/          # Templates for feature requests
 ├── CHANGELOG.md                 # Version history and document updates
