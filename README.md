@@ -42,11 +42,11 @@ CIVICS Governance Health Working Group , Nicolas Cerny, Cathy Hermstad Patanakar
 ```
 Beyond_MVG/
 ├── docs/                        # Core research documents (PDF)
-│   ├── Governance_Metrics_Manual.pdf
+│   ├── Governance_Metrics_Manual.pdf 
 │   ├── State_of_Governance_Report_Outline.pdf
 │   └── State_of_Governance_Measurement_Framework.pdf
-├── data/                        # Data outputs and epoch snapshots (future)
-├── setup-and-query/             # Metric calculation scripts (future)
+├── data/                        # Data results from report queries
+├── setup-and-query/             # Setup Cardano Node with DbSync and logic to gather data
 ├── .github/
 │   └── ISSUE_TEMPLATE/          # Templates for feature requests
 ├── CHANGELOG.md                 # Version history and document updates
