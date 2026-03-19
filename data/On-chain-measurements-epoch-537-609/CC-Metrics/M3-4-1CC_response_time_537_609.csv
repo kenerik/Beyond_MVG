@@ -1,0 +1,6 @@
+action_category,action_count,total_votes_cast,avg_cc_votes_per_action,avg_cc_participation_pct,median_first_response_days,median_last_response_days
+ALL_ACTIONS,76,480,6.32,90.23,11.07,24.48
+InfoAction,24,145,6.04,86.31,13.12,30.74
+NewConstitution,4,28,7.00,100.00,9.98,32.42
+ParameterChange,2,9,4.50,64.29,5.36,22.52
+TreasuryWithdrawals,46,298,6.48,92.55,11.07,23.02
