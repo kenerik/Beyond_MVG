@@ -1,14 +1,5 @@
 # Beyond MVG — State of Cardano Governance
-```
-  ____                             _   __  ____      _______ 
- |  _ \                           | | |  \/  \ \    / / ____|
- | |_) | ___ _   _  ___  _ __   __| | | \  / |\ \  / / |  __ 
- |  _ < / _ \ | | |/ _ \| '_ \ / _` | | |\/| | \ \/ /| | |_ |
- | |_) |  __/ |_| | (_) | | | | (_| | | |  | |  \  / | |__| |
- |____/ \___|\__, |\___/|_| |_|\__,_| |_|  |_|   \/   \_____|
-              __/ |                                          
-             |___/
-```
+
 
 > A research initiative commissioned by Cardano DReps and delivered by Input Output (IO) and Cardano Community Members.
 
@@ -140,3 +131,13 @@ We welcome contributions from the Cardano community. Please read [CONTRIBUTING.m
 
 
 This project is licensed under the [MIT License](LICENSE).
+```
+  ____                             _   __  ____      _______ 
+ |  _ \                           | | |  \/  \ \    / / ____|
+ | |_) | ___ _   _  ___  _ __   __| | | \  / |\ \  / / |  __ 
+ |  _ < / _ \ | | |/ _ \| '_ \ / _` | | |\/| | \ \/ /| | |_ |
+ | |_) |  __/ |_| | (_) | | | | (_| | | |  | |  \  / | |__| |
+ |____/ \___|\__, |\___/|_| |_|\__,_| |_|  |_|   \/   \_____|
+              __/ |                                          
+             |___/
+```
