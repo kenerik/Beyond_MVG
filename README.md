@@ -128,4 +128,13 @@ We welcome contributions from the Cardano community. Please read [CONTRIBUTING.m
 
 ## License
 
+...
+  ____                             _   __  ____      _______ 
+ |  _ \                           | | |  \/  \ \    / / ____|
+ | |_) | ___ _   _  ___  _ __   __| | | \  / |\ \  / / |  __ 
+ |  _ < / _ \ | | |/ _ \| '_ \ / _` | | |\/| | \ \/ /| | |_ |
+ | |_) |  __/ |_| | (_) | | | | (_| | | |  | |  \  / | |__| |
+ |____/ \___|\__, |\___/|_| |_|\__,_| |_|  |_|   \/   \_____|
+              __/ |                                          
+             |___/                                           
 This project is licensed under the [MIT License](LICENSE).
