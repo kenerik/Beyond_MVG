@@ -1,0 +1,293 @@
+epoch_no,threshold_pct,applicable_governance_actions,nakamoto_coefficient,total_dreps,total_active_stake_ada,threshold_stake_ada,cumulative_stake_at_nakamoto_ada,cumulative_pct_at_nakamoto
+537,51,Info Action,13,687,3136073484.61,1599397477.15,1605178245.70,51.18
+537,60,Hard Fork Initiation; New Committee (No Confidence State),19,687,3136073484.61,1881644090.77,1889594312.36,60.25
+537,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,25,687,3136073484.61,2101169234.69,2112181157.61,67.35
+537,75,Update Constitution; Governance Parameter Changes,34,687,3136073484.61,2352055113.46,2362892025.30,75.35
+538,51,Info Action,14,715,3385538272.08,1726624518.76,1741640369.52,51.44
+538,60,Hard Fork Initiation; New Committee (No Confidence State),21,715,3385538272.08,2031322963.25,2064403532.40,60.98
+538,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,27,715,3385538272.08,2268310642.30,2294680331.66,67.78
+538,75,Update Constitution; Governance Parameter Changes,36,715,3385538272.08,2539153704.06,2549827521.97,75.32
+539,51,Info Action,14,731,3586057690.26,1828889422.03,1858148313.11,51.82
+539,60,Hard Fork Initiation; New Committee (No Confidence State),20,731,3586057690.26,2151634614.16,2169082593.38,60.49
+539,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,26,731,3586057690.26,2402658652.48,2411690713.45,67.25
+539,75,Update Constitution; Governance Parameter Changes,36,731,3586057690.26,2689543267.70,2706245801.62,75.47
+540,51,Info Action,14,747,3736022580.55,1905371516.08,1919709982.09,51.38
+540,60,Hard Fork Initiation; New Committee (No Confidence State),21,747,3736022580.55,2241613548.33,2283649646.81,61.13
+540,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,27,747,3736022580.55,2503135128.97,2526834342.53,67.63
+540,75,Update Constitution; Governance Parameter Changes,36,747,3736022580.55,2802016935.41,2803905428.56,75.05
+541,51,Info Action,14,767,3800675130.31,1938344316.46,1940861858.06,51.07
+541,60,Hard Fork Initiation; New Committee (No Confidence State),21,767,3800675130.31,2280405078.19,2303740432.62,60.61
+541,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,27,767,3800675130.31,2546452337.31,2549028961.07,67.07
+541,75,Update Constitution; Governance Parameter Changes,37,767,3800675130.31,2850506347.73,2861633778.52,75.29
+542,51,Info Action,14,781,3865842462.78,1971579656.02,1983746821.47,51.31
+542,60,Hard Fork Initiation; New Committee (No Confidence State),21,781,3865842462.78,2319505477.67,2349649321.62,60.78
+542,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,27,781,3865842462.78,2590114450.07,2596074594.24,67.15
+542,75,Update Constitution; Governance Parameter Changes,37,781,3865842462.78,2899381847.09,2910855288.61,75.30
+543,51,Info Action,14,787,3921013037.12,1999716648.93,2016830240.91,51.44
+543,60,Hard Fork Initiation; New Committee (No Confidence State),21,787,3921013037.12,2352607822.27,2384662482.85,60.82
+543,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,27,787,3921013037.12,2627078734.87,2636580214.61,67.24
+543,75,Update Constitution; Governance Parameter Changes,37,787,3921013037.12,2940759777.84,2955201610.07,75.37
+544,51,Info Action,15,793,4039315446.58,2060050877.75,2126125393.42,52.64
+544,60,Hard Fork Initiation; New Committee (No Confidence State),21,793,4039315446.58,2423589267.95,2444265770.62,60.51
+544,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,28,793,4039315446.58,2706341349.21,2745669718.87,67.97
+544,75,Update Constitution; Governance Parameter Changes,37,793,4039315446.58,3029486584.93,3037253088.04,75.19
+545,51,Info Action,15,800,4050719735.49,2065867065.10,2132222615.09,52.64
+545,60,Hard Fork Initiation; New Committee (No Confidence State),21,800,4050719735.49,2430431841.29,2450902741.69,60.51
+545,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,28,800,4050719735.49,2713982222.78,2753987981.59,67.99
+545,75,Update Constitution; Governance Parameter Changes,37,800,4050719735.49,3038039801.61,3045916644.82,75.19
+546,51,Info Action,15,807,4224341953.84,2154414396.46,2159429088.00,51.12
+546,60,Hard Fork Initiation; New Committee (No Confidence State),22,807,4224341953.84,2534605172.30,2567688346.84,60.78
+546,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,28,807,4224341953.84,2830309109.07,2836787869.10,67.15
+546,75,Update Constitution; Governance Parameter Changes,38,807,4224341953.84,3168256465.38,3189197881.05,75.50
+547,51,Info Action,15,808,4270774567.44,2178095029.40,2189122667.13,51.26
+547,60,Hard Fork Initiation; New Committee (No Confidence State),22,808,4270774567.44,2562464740.47,2599045654.12,60.86
+547,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,28,808,4270774567.44,2861418960.19,2872133767.27,67.25
+547,75,Update Constitution; Governance Parameter Changes,38,808,4270774567.44,3203080925.58,3231302625.72,75.66
+548,51,Info Action,16,807,4340397109.12,2213602525.65,2274953164.91,52.41
+548,60,Hard Fork Initiation; New Committee (No Confidence State),22,807,4340397109.12,2604238265.47,2613831095.38,60.22
+548,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,29,807,4340397109.12,2908066063.11,2937290496.49,67.67
+548,75,Update Constitution; Governance Parameter Changes,38,807,4340397109.12,3255297831.84,3268930385.58,75.31
+549,51,Info Action,16,806,4389749465.22,2238772227.26,2299557657.21,52.38
+549,60,Hard Fork Initiation; New Committee (No Confidence State),22,806,4389749465.22,2633849679.13,2658929848.25,60.57
+549,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,29,806,4389749465.22,2941132141.69,2983006368.65,67.95
+549,75,Update Constitution; Governance Parameter Changes,38,806,4389749465.22,3292312098.91,3314507307.24,75.51
+550,51,Info Action,14,809,4689725754.62,2391760134.86,2445862287.04,52.15
+550,60,Hard Fork Initiation; New Committee (No Confidence State),20,809,4689725754.62,2813835452.77,2849482151.16,60.76
+550,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,26,809,4689725754.62,3142116255.60,3149037495.98,67.15
+550,75,Update Constitution; Governance Parameter Changes,35,809,4689725754.62,3517294315.96,3518295524.97,75.02
+551,51,Info Action,13,810,4794588999.22,2445240389.60,2455166840.60,51.21
+551,60,Hard Fork Initiation; New Committee (No Confidence State),19,810,4794588999.22,2876753399.53,2884301454.18,60.16
+551,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,26,810,4794588999.22,3212374629.48,3244512739.21,67.67
+551,75,Update Constitution; Governance Parameter Changes,35,810,4794588999.22,3595941749.42,3616755537.99,75.43
+552,51,Info Action,13,809,4947416942.56,2523182640.71,2599217913.52,52.54
+552,60,Hard Fork Initiation; New Committee (No Confidence State),19,809,4947416942.56,2968450165.54,3028191050.76,61.21
+552,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,25,809,4947416942.56,3314769351.52,3353939804.03,67.79
+552,75,Update Constitution; Governance Parameter Changes,34,809,4947416942.56,3710562706.92,3738779350.51,75.57
+553,51,Info Action,13,805,4993661554.21,2546767392.65,2628833759.00,52.64
+553,60,Hard Fork Initiation; New Committee (No Confidence State),18,805,4993661554.21,2996196932.53,2998342250.53,60.04
+553,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,25,805,4993661554.21,3345753241.32,3385205194.27,67.79
+553,75,Update Constitution; Governance Parameter Changes,34,805,4993661554.21,3745246165.66,3774450601.03,75.58
+554,51,Info Action,12,803,5171674384.45,2637553936.07,2704453478.30,52.29
+554,60,Hard Fork Initiation; New Committee (No Confidence State),17,803,5171674384.45,3103004630.67,3106859498.95,60.07
+554,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,24,803,5171674384.45,3465021837.58,3509308116.69,67.86
+554,75,Update Constitution; Governance Parameter Changes,33,803,5171674384.45,3878755788.33,3912013091.46,75.64
+555,51,Info Action,12,815,5218462272.07,2661415758.75,2722060154.74,52.16
+555,60,Hard Fork Initiation; New Committee (No Confidence State),18,815,5218462272.07,3131077363.24,3189898496.65,61.13
+555,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,24,815,5218462272.07,3496369722.28,3538305010.73,67.80
+555,75,Update Constitution; Governance Parameter Changes,33,815,5218462272.07,3913846704.05,3944697315.55,75.59
+556,51,Info Action,12,819,5269771612.94,2687583522.60,2746613343.82,52.12
+556,60,Hard Fork Initiation; New Committee (No Confidence State),18,819,5269771612.94,3161862967.76,3213336289.58,60.98
+556,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,24,819,5269771612.94,3530746980.67,3564636803.77,67.64
+556,75,Update Constitution; Governance Parameter Changes,33,819,5269771612.94,3952328709.71,3972506605.94,75.38
+557,51,Info Action,12,816,5309614822.47,2707903559.46,2783995314.99,52.43
+557,60,Hard Fork Initiation; New Committee (No Confidence State),18,816,5309614822.47,3185768893.48,3247734019.28,61.17
+557,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,24,816,5309614822.47,3557441931.05,3599740169.44,67.80
+557,75,Update Constitution; Governance Parameter Changes,33,816,5309614822.47,3982211116.85,4009457912.31,75.51
+558,51,Info Action,12,819,5376202509.26,2741863279.72,2827970538.39,52.60
+558,60,Hard Fork Initiation; New Committee (No Confidence State),17,819,5376202509.26,3225721505.55,3229943836.89,60.08
+558,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,24,819,5376202509.26,3602055681.20,3647267889.78,67.84
+558,75,Update Constitution; Governance Parameter Changes,33,819,5376202509.26,4032151881.94,4058962185.16,75.50
+559,51,Info Action,12,818,5314065368.90,2710173338.14,2752473820.32,51.80
+559,60,Hard Fork Initiation; New Committee (No Confidence State),18,818,5314065368.90,3188439221.34,3224684404.78,60.68
+559,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,24,818,5314065368.90,3560423797.16,3577540575.88,67.32
+559,75,Update Constitution; Governance Parameter Changes,33,818,5314065368.90,3985549026.67,3990254842.63,75.09
+560,51,Info Action,13,824,5506265542.20,2808195426.52,2886926078.87,52.43
+560,60,Hard Fork Initiation; New Committee (No Confidence State),19,824,5506265542.20,3303759325.32,3334894399.96,60.57
+560,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,26,824,5506265542.20,3689197913.27,3735798235.88,67.85
+560,75,Update Constitution; Governance Parameter Changes,35,824,5506265542.20,4129699156.65,4135707958.15,75.11
+561,51,Info Action,13,823,5494555826.52,2802223471.53,2872198306.00,52.27
+561,60,Hard Fork Initiation; New Committee (No Confidence State),19,823,5494555826.52,3296733495.91,3323855014.78,60.49
+561,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,26,823,5494555826.52,3681352403.77,3726157319.93,67.82
+561,75,Update Constitution; Governance Parameter Changes,35,823,5494555826.52,4120916869.89,4128772733.35,75.14
+562,51,Info Action,13,830,5538301679.70,2824533856.65,2879936926.78,52.00
+562,60,Hard Fork Initiation; New Committee (No Confidence State),19,830,5538301679.70,3322981007.82,3332934319.60,60.18
+562,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,26,830,5538301679.70,3710662125.40,3743715584.56,67.60
+562,75,Update Constitution; Governance Parameter Changes,36,830,5538301679.70,4153726259.77,4192372449.90,75.70
+563,51,Info Action,13,827,5543320689.15,2827093551.47,2880176280.51,51.96
+563,60,Hard Fork Initiation; New Committee (No Confidence State),19,827,5543320689.15,3325992413.49,3331750017.25,60.10
+563,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,26,827,5543320689.15,3714024861.73,3743853143.09,67.54
+563,75,Update Constitution; Governance Parameter Changes,36,827,5543320689.15,4157490516.86,4191935487.49,75.62
+564,51,Info Action,13,823,5645827225.11,2879371884.81,2958903242.52,52.41
+564,60,Hard Fork Initiation; New Committee (No Confidence State),19,823,5645827225.11,3387496335.07,3412126947.12,60.44
+564,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,26,823,5645827225.11,3782704240.83,3825248791.86,67.75
+564,75,Update Constitution; Governance Parameter Changes,35,823,5645827225.11,4234370418.84,4238293793.20,75.07
+565,51,Info Action,14,830,5364379105.14,2735833343.62,2764513330.23,51.53
+565,60,Hard Fork Initiation; New Committee (No Confidence State),21,830,5364379105.14,3218627463.08,3259361373.00,60.76
+565,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,27,830,5364379105.14,3594134000.44,3598229369.77,67.08
+565,75,Update Constitution; Governance Parameter Changes,37,830,5364379105.14,4023284328.85,4037536201.53,75.27
+566,51,Info Action,14,833,5422844457.92,2765650673.54,2815955010.76,51.93
+566,60,Hard Fork Initiation; New Committee (No Confidence State),21,833,5422844457.92,3253706674.75,3312072403.16,61.08
+566,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,27,833,5422844457.92,3633305786.81,3648415710.06,67.28
+566,75,Update Constitution; Governance Parameter Changes,37,833,5422844457.92,4067133343.44,4087178172.90,75.37
+567,51,Info Action,14,834,5410386368.03,2759297047.69,2811279681.23,51.96
+567,60,Hard Fork Initiation; New Committee (No Confidence State),20,834,5410386368.03,3246231820.82,3247557713.90,60.02
+567,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,27,834,5410386368.03,3624958866.58,3653810244.53,67.53
+567,75,Update Constitution; Governance Parameter Changes,37,834,5410386368.03,4057789776.02,4084457216.97,75.49
+568,51,Info Action,14,834,5422446957.47,2765447948.31,2822053292.99,52.04
+568,60,Hard Fork Initiation; New Committee (No Confidence State),20,834,5422446957.47,3253468174.48,3263272717.65,60.18
+568,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,27,834,5422446957.47,3633039461.51,3674191466.06,67.76
+568,75,Update Constitution; Governance Parameter Changes,36,834,5422446957.47,4066835218.10,4069090301.18,75.04
+569,51,Info Action,14,832,5438513015.75,2773641638.03,2848348620.10,52.37
+569,60,Hard Fork Initiation; New Committee (No Confidence State),20,832,5438513015.75,3263107809.45,3288556063.11,60.47
+569,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,26,832,5438513015.75,3643803720.55,3645801383.90,67.04
+569,75,Update Constitution; Governance Parameter Changes,36,832,5438513015.75,4078884761.81,4096072335.27,75.32
+570,51,Info Action,14,836,5486679221.17,2798206402.79,2878005790.09,52.45
+570,60,Hard Fork Initiation; New Committee (No Confidence State),20,836,5486679221.17,3292007532.70,3321188946.13,60.53
+570,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,26,836,5486679221.17,3676075078.18,3684714808.68,67.16
+570,75,Update Constitution; Governance Parameter Changes,36,836,5486679221.17,4115009415.87,4142743670.42,75.51
+571,51,Info Action,13,834,5490260046.66,2800032623.80,2806280861.56,51.11
+571,60,Hard Fork Initiation; New Committee (No Confidence State),20,834,5490260046.66,3294156028.00,3337911909.46,60.80
+571,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,26,834,5490260046.66,3678474231.26,3702574716.75,67.44
+571,75,Update Constitution; Governance Parameter Changes,35,834,5490260046.66,4117695035.00,4122065331.64,75.08
+572,51,Info Action,13,839,5437572603.75,2773162027.91,2828673927.90,52.02
+572,60,Hard Fork Initiation; New Committee (No Confidence State),19,839,5437572603.75,3262543562.25,3283138790.51,60.38
+572,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,26,839,5437572603.75,3643173644.51,3692069406.00,67.90
+572,75,Update Constitution; Governance Parameter Changes,35,839,5437572603.75,4078179452.81,4095791643.34,75.32
+573,51,Info Action,13,839,5476760108.36,2793147655.26,2851146217.13,52.06
+573,60,Hard Fork Initiation; New Committee (No Confidence State),19,839,5476760108.36,3286056065.01,3308582197.87,60.41
+573,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,26,839,5476760108.36,3669429272.60,3720712034.69,67.94
+573,75,Update Constitution; Governance Parameter Changes,35,839,5476760108.36,4107570081.27,4128370496.09,75.38
+574,51,Info Action,13,842,5497555043.42,2803753072.14,2889186526.52,52.55
+574,60,Hard Fork Initiation; New Committee (No Confidence State),19,842,5497555043.42,3298533026.05,3346994792.04,60.88
+574,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,25,842,5497555043.42,3683361879.09,3703722142.47,67.37
+574,75,Update Constitution; Governance Parameter Changes,34,842,5497555043.42,4123166282.56,4126255597.66,75.06
+575,51,Info Action,13,846,5562081216.89,2836661420.62,2930309202.30,52.68
+575,60,Hard Fork Initiation; New Committee (No Confidence State),19,846,5562081216.89,3337248730.14,3393679187.01,61.01
+575,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,25,846,5562081216.89,3726594415.32,3751921648.23,67.46
+575,75,Update Constitution; Governance Parameter Changes,34,846,5562081216.89,4171560912.67,4176252959.27,75.08
+576,51,Info Action,12,845,5642072566.13,2877457008.73,2897577604.19,51.36
+576,60,Hard Fork Initiation; New Committee (No Confidence State),18,845,5642072566.13,3385243539.68,3394004457.73,60.16
+576,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,25,845,5642072566.13,3780188619.31,3824064127.68,67.78
+576,75,Update Constitution; Governance Parameter Changes,34,845,5642072566.13,4231554424.60,4248143862.15,75.29
+577,51,Info Action,12,847,5681791245.65,2897713535.28,2925262222.00,51.48
+577,60,Hard Fork Initiation; New Committee (No Confidence State),18,847,5681791245.65,3409074747.39,3428426483.17,60.34
+577,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,25,847,5681791245.65,3806800134.58,3862796638.64,67.99
+577,75,Update Constitution; Governance Parameter Changes,34,847,5681791245.65,4261343434.24,4281145807.15,75.35
+578,51,Info Action,12,849,5665573868.11,2889442672.74,2939106247.51,51.88
+578,60,Hard Fork Initiation; New Committee (No Confidence State),18,849,5665573868.11,3399344320.87,3444478911.44,60.80
+578,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,24,849,5665573868.11,3795934491.64,3821682150.62,67.45
+578,75,Update Constitution; Governance Parameter Changes,33,849,5665573868.11,4249180401.08,4250008093.15,75.01
+579,51,Info Action,12,850,5703179625.53,2908621609.02,2975426789.78,52.17
+579,60,Hard Fork Initiation; New Committee (No Confidence State),18,850,5703179625.53,3421907775.32,3482113022.52,61.06
+579,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,24,850,5703179625.53,3821130349.11,3861275542.21,67.70
+579,75,Update Constitution; Governance Parameter Changes,33,850,5703179625.53,4277384719.15,4287585568.73,75.18
+580,51,Info Action,12,855,5719131885.15,2916757261.43,2978929022.77,52.09
+580,60,Hard Fork Initiation; New Committee (No Confidence State),18,855,5719131885.15,3431479131.09,3488690336.42,61.00
+580,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,24,855,5719131885.15,3831818363.05,3870698076.61,67.68
+580,75,Update Constitution; Governance Parameter Changes,33,855,5719131885.15,4289348913.87,4298876238.50,75.17
+581,51,Info Action,12,854,5799513994.99,2957752137.44,3048104078.71,52.56
+581,60,Hard Fork Initiation; New Committee (No Confidence State),17,854,5799513994.99,3479708396.99,3485979029.45,60.11
+581,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,23,854,5799513994.99,3885674376.64,3885965200.91,67.01
+581,75,Update Constitution; Governance Parameter Changes,33,854,5799513994.99,4349635496.24,4369453461.15,75.34
+582,51,Info Action,12,852,5788324054.93,2952045268.01,3030512826.10,52.36
+582,60,Hard Fork Initiation; New Committee (No Confidence State),17,852,5788324054.93,3472994432.96,3474241259.31,60.02
+582,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,24,852,5788324054.93,3878177116.80,3931745169.02,67.93
+582,75,Update Constitution; Governance Parameter Changes,33,852,5788324054.93,4341243041.20,4358118278.69,75.29
+583,51,Info Action,12,856,5755447150.90,2935278046.96,3018457554.39,52.45
+583,60,Hard Fork Initiation; New Committee (No Confidence State),17,856,5755447150.90,3453268290.54,3462293382.32,60.16
+583,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,23,856,5755447150.90,3856149591.10,3861238307.21,67.09
+583,75,Update Constitution; Governance Parameter Changes,33,856,5755447150.90,4316585363.18,4339626031.51,75.40
+584,51,Info Action,12,859,5788485874.84,2952127796.17,3041057055.98,52.54
+584,60,Hard Fork Initiation; New Committee (No Confidence State),17,859,5788485874.84,3473091524.90,3483743043.84,60.18
+584,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,23,859,5788485874.84,3878285536.14,3890108327.91,67.20
+584,75,Update Constitution; Governance Parameter Changes,33,859,5788485874.84,4341364406.13,4368265309.44,75.46
+585,51,Info Action,12,865,5814336645.43,2965311689.17,3056259934.42,52.56
+585,60,Hard Fork Initiation; New Committee (No Confidence State),17,865,5814336645.43,3488601987.26,3508371938.93,60.34
+585,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,23,865,5814336645.43,3895605552.44,3913594730.83,67.31
+585,75,Update Constitution; Governance Parameter Changes,33,865,5814336645.43,4360752484.07,4396747595.44,75.62
+586,51,Info Action,12,862,5833982740.24,2975331197.52,3064964776.97,52.54
+586,60,Hard Fork Initiation; New Committee (No Confidence State),17,862,5833982740.24,3500389644.15,3519252025.17,60.32
+586,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,23,862,5833982740.24,3908768435.96,3930920081.31,67.38
+586,75,Update Constitution; Governance Parameter Changes,33,862,5833982740.24,4375487055.18,4413106924.79,75.64
+587,51,Info Action,12,863,5794901600.06,2955399816.03,3024859229.65,52.20
+587,60,Hard Fork Initiation; New Committee (No Confidence State),17,863,5794901600.06,3476940960.04,3485724148.89,60.15
+587,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,23,863,5794901600.06,3882584072.04,3897389975.35,67.26
+587,75,Update Constitution; Governance Parameter Changes,33,863,5794901600.06,4346176200.05,4373622394.33,75.47
+588,51,Info Action,12,861,5775505459.75,2945507784.47,3018219255.86,52.26
+588,60,Hard Fork Initiation; New Committee (No Confidence State),17,861,5775505459.75,3465303275.85,3476989954.14,60.20
+588,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,23,861,5775505459.75,3869588658.03,3891039116.63,67.37
+588,75,Update Constitution; Governance Parameter Changes,33,861,5775505459.75,4331629094.81,4367069211.21,75.61
+589,51,Info Action,12,860,5790282907.81,2953044282.98,3037656944.37,52.46
+589,60,Hard Fork Initiation; New Committee (No Confidence State),17,860,5790282907.81,3474169744.68,3496754835.59,60.39
+589,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,23,860,5790282907.81,3879489548.23,3910239564.72,67.53
+589,75,Update Constitution; Governance Parameter Changes,32,860,5790282907.81,4342712180.86,4343117706.85,75.01
+590,51,Info Action,12,860,5795666665.81,2955789999.56,3041533887.53,52.48
+590,60,Hard Fork Initiation; New Committee (No Confidence State),17,860,5795666665.81,3477399999.48,3500379125.12,60.40
+590,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,23,860,5795666665.81,3883096666.09,3915223821.16,67.55
+590,75,Update Constitution; Governance Parameter Changes,32,860,5795666665.81,4346749999.35,4349836140.07,75.05
+591,51,Info Action,12,860,5789350941.91,2952568980.38,3035463693.44,52.43
+591,60,Hard Fork Initiation; New Committee (No Confidence State),17,860,5789350941.91,3473610565.15,3490029791.29,60.28
+591,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,23,860,5789350941.91,3878865131.08,3906884258.60,67.48
+591,75,Update Constitution; Governance Parameter Changes,33,860,5789350941.91,4342013206.43,4379423904.18,75.65
+592,51,Info Action,12,859,5812378752.95,2964313164.01,3055536572.23,52.57
+592,60,Hard Fork Initiation; New Committee (No Confidence State),17,859,5812378752.95,3487427251.77,3516554033.50,60.50
+592,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,23,859,5812378752.95,3894293764.48,3934128382.64,67.69
+592,75,Update Constitution; Governance Parameter Changes,32,859,5812378752.95,4359284064.71,4369686030.42,75.18
+593,51,Info Action,12,859,5799085624.52,2957533668.50,3054493184.75,52.67
+593,60,Hard Fork Initiation; New Committee (No Confidence State),17,859,5799085624.52,3479451374.71,3513224260.76,60.58
+593,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,23,859,5799085624.52,3885387368.43,3924533828.52,67.68
+593,75,Update Constitution; Governance Parameter Changes,32,859,5799085624.52,4349314218.39,4362298200.61,75.22
+594,51,Info Action,12,859,5806931449.79,2961535039.39,3060566279.35,52.71
+594,60,Hard Fork Initiation; New Committee (No Confidence State),17,859,5806931449.79,3484158869.87,3520713218.56,60.63
+594,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,23,859,5806931449.79,3890644071.36,3933031902.73,67.73
+594,75,Update Constitution; Governance Parameter Changes,32,859,5806931449.79,4355198587.34,4370663832.84,75.27
+595,51,Info Action,12,854,5804290291.89,2960188048.86,3057667504.63,52.68
+595,60,Hard Fork Initiation; New Committee (No Confidence State),17,854,5804290291.89,3482574175.13,3519036781.39,60.63
+595,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,23,854,5804290291.89,3888874495.56,3930495533.83,67.72
+595,75,Update Constitution; Governance Parameter Changes,32,854,5804290291.89,4353217718.92,4368647466.38,75.27
+596,51,Info Action,11,854,5818387904.37,2967377831.23,2972988808.60,51.10
+596,60,Hard Fork Initiation; New Committee (No Confidence State),17,854,5818387904.37,3491032742.62,3541533178.87,60.87
+596,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,23,854,5818387904.37,3898319895.93,3949482681.25,67.88
+596,75,Update Constitution; Governance Parameter Changes,32,854,5818387904.37,4363790928.28,4385852225.83,75.38
+597,51,Info Action,11,853,5734937920.47,2924818339.44,2926468667.65,51.03
+597,60,Hard Fork Initiation; New Committee (No Confidence State),17,853,5734937920.47,3440962752.28,3494726479.93,60.94
+597,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,23,853,5734937920.47,3842408406.72,3895580661.30,67.93
+597,75,Update Constitution; Governance Parameter Changes,32,853,5734937920.47,4301203440.36,4306634513.40,75.09
+598,51,Info Action,12,855,5755395075.63,2935251488.57,3032606022.72,52.69
+598,60,Hard Fork Initiation; New Committee (No Confidence State),17,855,5755395075.63,3453237045.38,3494618060.83,60.72
+598,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,23,855,5755395075.63,3856114700.67,3894804368.25,67.67
+598,75,Update Constitution; Governance Parameter Changes,33,855,5755395075.63,4316546306.72,4342775666.34,75.46
+599,51,Info Action,12,856,5759266512.22,2937225921.23,3038978691.97,52.77
+599,60,Hard Fork Initiation; New Committee (No Confidence State),17,856,5759266512.22,3455559907.33,3497664020.15,60.73
+599,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,23,856,5759266512.22,3858708563.18,3891305921.97,67.57
+599,75,Update Constitution; Governance Parameter Changes,33,856,5759266512.22,4319449884.16,4343356045.62,75.42
+600,51,Info Action,12,858,5746816027.41,2930876173.98,3026509694.31,52.66
+600,60,Hard Fork Initiation; New Committee (No Confidence State),17,858,5746816027.41,3448089616.45,3483024706.59,60.61
+600,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,23,858,5746816027.41,3850366738.37,3870350732.12,67.35
+600,75,Update Constitution; Governance Parameter Changes,33,858,5746816027.41,4310112020.56,4334314646.12,75.42
+601,51,Info Action,11,859,5762727331.02,2938990938.82,2939333573.01,51.01
+601,60,Hard Fork Initiation; New Committee (No Confidence State),17,859,5762727331.02,3457636398.61,3500304995.65,60.74
+601,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,23,859,5762727331.02,3861027311.78,3893745820.09,67.57
+601,75,Update Constitution; Governance Parameter Changes,32,859,5762727331.02,4322045498.26,4323861288.13,75.03
+602,51,Info Action,12,858,5773250992.28,2944358006.06,3044130309.42,52.73
+602,60,Hard Fork Initiation; New Committee (No Confidence State),17,858,5773250992.28,3463950595.37,3500989914.81,60.64
+602,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,23,858,5773250992.28,3868078164.83,3901081050.63,67.57
+602,75,Update Constitution; Governance Parameter Changes,33,858,5773250992.28,4329938244.21,4366899094.16,75.64
+603,51,Info Action,12,858,5778812123.94,2947194183.21,3044237662.24,52.68
+603,60,Hard Fork Initiation; New Committee (No Confidence State),17,858,5778812123.94,3467287274.36,3503302583.95,60.62
+603,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,23,858,5778812123.94,3871804123.04,3908768110.95,67.64
+603,75,Update Constitution; Governance Parameter Changes,33,858,5778812123.94,4334109092.95,4369930949.03,75.62
+604,51,Info Action,11,859,5781275751.65,2948450633.34,2953392912.98,51.09
+604,60,Hard Fork Initiation; New Committee (No Confidence State),17,859,5781275751.65,3468765450.99,3511451372.65,60.74
+604,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,23,859,5781275751.65,3873454753.60,3925195821.34,67.89
+604,75,Update Constitution; Governance Parameter Changes,32,859,5781275751.65,4335956813.74,4345360808.10,75.16
+605,51,Info Action,11,858,5788288291.07,2952027028.45,2980121421.50,51.49
+605,60,Hard Fork Initiation; New Committee (No Confidence State),17,858,5788288291.07,3472972974.64,3538797329.87,61.14
+605,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,22,858,5788288291.07,3878153155.02,3887644299.28,67.16
+605,75,Update Constitution; Governance Parameter Changes,32,858,5788288291.07,4341216218.30,4364291978.11,75.40
+606,51,Info Action,11,859,5803759384.53,2959917286.11,2993350734.92,51.58
+606,60,Hard Fork Initiation; New Committee (No Confidence State),17,859,5803759384.53,3482255630.72,3552840755.18,61.22
+606,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,22,859,5803759384.53,3888518787.64,3903161014.78,67.25
+606,75,Update Constitution; Governance Parameter Changes,32,859,5803759384.53,4352819538.40,4377978888.01,75.43
+607,51,Info Action,11,861,5815607027.65,2965959584.10,2996193614.52,51.52
+607,60,Hard Fork Initiation; New Committee (No Confidence State),17,861,5815607027.65,3489364216.59,3559886399.96,61.21
+607,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,22,861,5815607027.65,3896456708.52,3913848398.74,67.30
+607,75,Update Constitution; Governance Parameter Changes,32,861,5815607027.65,4361705270.73,4386686263.40,75.43
+608,51,Info Action,11,863,5817340044.55,2966843422.72,2992712743.61,51.44
+608,60,Hard Fork Initiation; New Committee (No Confidence State),17,863,5817340044.55,3490404026.73,3563222807.22,61.25
+608,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,22,863,5817340044.55,3897617829.85,3916300972.70,67.32
+608,75,Update Constitution; Governance Parameter Changes,32,863,5817340044.55,4363005033.41,4386806977.35,75.41
+609,51,Info Action,13,862,6007225434.26,3063684971.47,3161733964.20,52.63
+609,60,Hard Fork Initiation; New Committee (No Confidence State),18,862,6007225434.26,3604335260.56,3614519364.57,60.17
+609,67,Motion of No Confidence; New Committee (Normal); Treasury Withdrawal; Network/Economic/Technical Parameter Changes,24,862,6007225434.26,4024841040.95,4037394972.08,67.21
+609,75,Update Constitution; Governance Parameter Changes,34,862,6007225434.26,4505419075.69,4523892079.39,75.31

@@ -1,0 +1,6 @@
+epoch_window,window_start,window_end,new_registrations_r,retirements_d,inactive_i,net_change,net_change_rate_per_epoch
+537-548,537,548,209,108,99,2,0.1667
+549-560,549,560,95,78,117,-100,-8.3333
+561-572,561,572,62,68,112,-118,-9.8333
+573-584,573,584,85,60,103,-78,-6.5000
+585-596,585,596,29,39,101,-111,-9.2500
