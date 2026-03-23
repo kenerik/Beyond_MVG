@@ -30,6 +30,10 @@ Commissioned by Cardano DReps; delivered by IO and Cardano Community Members inc
 | Nana Safo | Wada Global |
 | Richmond Oppong | Wada Global |
 | Tevo Kask | — |
+| IOG | - |
+| Danielle Stanko | IOG |
+| Kelvin Peter | IOG |
+| JM Martinez Felices | IOG |
 
 Special thanks to everyone that contributed, had critical eyes, debated with us, responded to surveys,  and made this report possible.
 
