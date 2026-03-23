@@ -72,7 +72,7 @@ The foundational research document presenting the rationale and theoretical basi
 - **SPO Metrics** — Security & Oversight
 - **Constitutional Committee Metrics** — Constitutional Adherence & Veto Oversight
 
-### 2. [Click here for the Interactive Technical Manual](https://kenerik.github.io/Beyond_MVG/manual.html)
+### 2. [Click here for the Interactive Technical Manual](https://kenerik.github.io/Beyond_MVG/docs/cardano-node-setup.html)
 Step-by-step technical guidance for calculating each metric. Intended for tooling providers and technical community members who want to independently implement or verify measurements. Covers data sources, SQL query logic, and visualization specifications for all 12 defined metrics.
 
 ### 3. [State of Governance Report Outline](docs/State_of_Governance_Report_Outline.pdf)
