@@ -1,7 +1,7 @@
 # Beyond MVG — State of Cardano Governance
 
 
-> A research initiative commissioned by Cardano DReps and delivered by Input Output (IO) and Cardano Community Members.
+> A research initiative commissioned by Cardano DReps and delivered by Input Output Group (IOG) and Cardano Community Members.
 
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Status](https://img.shields.io/badge/status-active-brightgreen)](https://github.com/kenerik/Beyond_MVG)
