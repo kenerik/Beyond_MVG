@@ -54,7 +54,7 @@ Beyond_MVG/
 │   ├── creating visualizations for each metric
 │   └── TBD
 ├── data/                        # Data results from report queries
-├── setup-and-query/             # Setup Cardano Node with DbSync and logic to gather data
+├── TBD
 ├── .github/
 │   └── ISSUE_TEMPLATE/          # Templates for feature requests
 ├── CHANGELOG.md                 # Version history and document updates
