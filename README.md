@@ -114,7 +114,7 @@ The template and structure for producing periodic State of Cardano Governance re
 
 - **Quantitative metrics** use on-chain data queryable via cardano-db-sync and can be automated for continuous monitoring.
 - **Qualitative data** (surveys, stakeholder interviews, workshops) supplements on-chain measurements to capture the "why" behind observed patterns.
-- AI tools (Gemini CLI and Claude Code) were used to enforce consistency between documents and structure the analysis. All AI-assisted content was reviewed by the research team.
+- AI tools (Gemini CLI and Claude Code) were used to enforce consistency between documents and structure the analysis. All AI-assisted content was reviewed by Beyond MVG team.
 
 ---
 
