@@ -52,7 +52,7 @@ Beyond_MVG/
 │   ├── Governance_Metrics_Manual.pdf
 │   ├── State_of_Governance_Report_Outline.pdf
 │   ├── Cardano Node Setup & Configuration
-│   ├── creating visualizations for each metric
+│   ├── Creating visualizations for each metric
 │   └── TBD
 ├── data/                        # Data results from report queries and Generated visualizations
 │   ├── On-chain-measurements-epoch-537-609
