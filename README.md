@@ -19,8 +19,7 @@ The project goes **beyond the Minimum Viable Governance (MVG)** baseline by esta
 
 ## Authors
 
-Commissioned by Cardano DReps; delivered by IO and Cardano Community Members including:
-Alphabetical order
+Commissioned by Cardano DReps; delivered by IO and Cardano Community Members in alphabetical order:
 
 | Name | Affiliation |
 |---|---|
