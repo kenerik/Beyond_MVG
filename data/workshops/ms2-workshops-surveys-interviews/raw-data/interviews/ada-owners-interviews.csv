@@ -1,0 +1,163 @@
+﻿"Timestamp","M1-A-S - What barriers, if any, have you encountered when trying to participate in Cardano governance - Can you describe a specific moment when you wanted to participate but didn’t or couldn’t? Probe: What information do you find most useful when making governance decisions, and what information is currently missing or hard to find?","M2-A-S - If you have delegated to a DRep, please describe your experience with delegating your voting power, including any challenges you faced. If you have not, why not? Probe: If relevant, what would make the delegation process easier for you?","M2-B-S - How do you go about finding and researching DReps when considering delegation? Probe: What sources of information do you trust most when evaluating DReps?
+","M3-A-S - What factors do you think cause ada owners to change their DRep delegation? Have you had experience with an event that has led to a change in how you delegate your voting power? Probe: How can DReps better maintain the trust and engagement of their delegators?","M4/M5-A-S - Do you think DRep voting power has become more concentrated since the role was established? If so what do you think contributes most to this change? Probe: What changes do you think would help distribute voting power more evenly across DReps?","What governance tools or resources do you currently use, and what is missing or inadequate for your needs? Probe: If you could have one tool or resource that doesn't exist today, what would it do?","What improvements would you most like to see in Cardano’s governance system?  Are there fundamental changes you believe are needed to how Cardano governance works?","Which of these roles best describes your involvement in the Cardano ecosystem? (Select all that apply)","How long have you been actively involved in the Cardano ecosystem?"
+"46053.3878628009","Candidate 1:
+""I find that the technical nature of many governance actions is a recurring challenge. Documents prepared for voting or broader discussion are often highly technical, which makes them difficult to understand without additional context. In several cases, I have had to conduct external research, such as reading up on topics like Hydra, just to develop a clearer basis for decision-making. What I really need is better explanation of these technical aspects. The language used in many blockchain-related governance discussions, especially when outlining the implications and consequences of an action, can be hard to relate to unless one has the background of a full-time blockchain expert. Clearer, more accessible explanations would make it much easier to engage meaningfully and vote with confidence.""","Candidate 1:
+""I have delegated to a Decentralized Representative and have not encountered any major issues with the process. I consider myself fortunate because my DRep is very active, provides regular updates, and is visibly engaged in voting on governance matters. This level of activity and communication has made the experience smooth and reassuring. I also did not face any technical challenges during delegation, largely because there was consistent guidance available, including support in video format, which helped make the onboarding process clear and straightforward.""","Candidate 1:
+""I see a clear imbalance in the system, where more prominent DReps benefit from greater visibility, stronger networks, and more resources, which gives them an unfair advantage over newer or less visible DReps. Those who are louder or more established tend to attract more delegation, regardless of whether others are equally capable. That said, I was impressed by a recent initiative from the Cardano Foundation that distributed significant voting power across a group of new DReps, as this helped raise their visibility and create a more level playing field. When assessing DReps and their credibility, I rely on sources such as the Cardano Governance Actions account on X and Cardano Scan to review voting records and track actual participation.""","Candidate 1:
+""I think many ADA holders simply do not have the time to closely monitor their DReps or research alternatives, especially since most people are not engaged with Cardano on a full-time basis. Because of this, I believe the responsibility for building and maintaining trust lies largely with DReps themselves. Beyond formal or public updates on platforms like X, more informal communication channels, such as Telegram, could help strengthen the relationship with delegators, even though direct outreach is difficult due to the anonymity involved. Personally, I have not changed my delegation. The biggest challenge for me was finding the right DRep initially, and I have remained with my current choice because they provide regular updates and I trust their expertise.""","Candidate 1:
+""I agree that voting power tends to concentrate among a few established actors, the so-called big wheels. However, I see the Cardano Foundation’s initiative to support new DReps with both voting power and tooling as a step in the right direction, as it gives them a real chance to compete and be seen. While there are concerns that some new DReps might drop off once that support is withdrawn, I believe the mentorship aspect of such programs is critical. With the right guidance, new DReps can learn how to operate effectively and sustain themselves over time. I would strongly encourage new DReps to actively seek mentorship and advice from those who are already successful, put in the necessary work, and make full use of the support they receive.
+More broadly, I think the focus of reforms should be on creating equal opportunity by improving the visibility of new DReps within the community. I am also open to more experimental approaches, such as trial-based methods where some participants are allowed to switch between DReps for testing purposes, in order to gather meaningful feedback and learn what works. On the idea of introducing a saturation point for delegation, such as a cap of 50 million ADA per DRep, I would support testing it as a way to validate the theory. However, I would be uncomfortable with making such a mechanism permanent without strong evidence that it delivers better outcomes.""","Candidate 1:
+""I currently rely on the Cardano Governance Actions account on X and the Cardano Governance Voting Tool to stay informed and participate in governance. However, I see a clear gap when it comes to resources designed for non-technical audiences. Many aspects of blockchain governance are explained in highly technical terms, which can be a barrier to broader participation. I believe that providing clear, accessible explanations of these technical concepts would enable more people to become actively involved in governance or feel confident delegating their ADA.""","Candidate 1:
+""I believe DReps should maintain informal, open Telegram groups that anyone can join, as this would allow for more transparent and frequent updates. Compared to formal posts on platforms like X, these open channels lower the barrier to participation and make it easier for ADA holders to stay informed, especially given that delegator anonymity limits direct one-on-one engagement. Such groups would allow people to learn about a DRep’s activities and positions regardless of whether they have already delegated to them. I see this informal approach as a way to strengthen accountability and build more genuine relationships over time. Ultimately, I think the responsibility for keeping delegators informed should rest with DReps themselves, going beyond occasional public announcements. Proactive communication helps ADA holders make informed delegation decisions and consider switching when appropriate, while also accommodating the limited time many holders have to closely monitor governance on their own.""","Candidate 1:
+Ada Holder, Proposal Submitter / Project Catalyst Veteran, General Community Member / Enthusiast","Candidate 1:
+1-2 years"
+"46063.5552503472","Candidate 2:
+Candidate identifies ""weak"" and ""over-complicated"" tooling as a primary barrier. He specifically notes that the current ecosystem forces users to navigate ""CBOR hexes,"" hashes, and signatures, which is intimidating for new holders.
+He describes the early launch phase as a significant pain point because tooling like GovTool was developed by multiple partners, leading to a lack of shared standards and centralized dependencies.
+He finds the rationales published by DReps highly useful for understanding constitutional nuances. However, he notes a critical lack of independent objective analysis regarding economic modeling, treasury projections, and marketing growth strategies","Candidate 2:
+Candidate found the process ""straightforward"" personally because of his institutional knowledge and familiarity with the steps.
+He acknowledges that for the average user, the process is ""scary"" and a ""massive learning curve. He advocates for simplified, less intimidating tooling that moves away from technical jargon to make governance a ""unique selling point"" for Cardano rather than a hurdle.","Candidate 2:
+His primary tool for tracking governance and DReps is ADAStat.
+He reads approximately 90% of all published rationales to evaluate a DRep's thought process. He also relies on his ability to directly communicate with DReps via DMs and personal connections","Candidate 2:
+Candidate is a direct DRep (self-delegated) and has not changed his private delegation. However, he did change the delegation for Intersect’s accounts to ""auto abstain"" to ensure neutrality and manage conflicts of interest.
+He notes that ""stickiness"" is a problem where people delegate once and never change, which allows some entities to maintain power even if their initial acquisition tactics were ""underhanded""","Candidate 2:
+He believes power is ""highly concentrated"" and ""not healthy"" for the long-term security of the network. He highlights that a single entity currently controls the top two DReps.
+Concentration is driven by wallet defaults (e.g., Yoroi and Eternal) that initially defaulted users to their own DReps, creating a ""sticky"" influence that is hard to shift.
+Candidate suggests moving toward ""one person, one vote"" or quadratic voting models in the long term. He also recommends incentivizing rationale publication to help voters distinguish quality representatives.","Candidate 2:
+ADAStat, GovTool, and specialized dashboards like those built by Rodrigo.
+There is a lack of distributed thinking on economics and marketing.
+He would like an AI-driven analysis tool that scrapes all published rationales and automatically categorizes DReps by their expertise (e.g., ""marketing-focused"" vs. ""tech-focused"") to help delegators choose based on their own interests","Candidate 2:
+He argues for compensating all governance bodies (DReps, SPOs, and CC) to foster a professional class of participants.
+Establishing a standardized training/shadowing period (modeled after UK magistrates) for governance roles,
+Creating a CIP leaderboard with ""upvotes"" and ""trending"" tags to make the technical proposal process more social and transparent","Candidate 2:
+Ada Holder, DRep (Delegated Representative), Proposal Submitter / Project Catalyst Veteran, General Community Member / Enthusiast","Candidate 2:
+More than 5 years"
+"46065.5480034722","Candidate 3:
+I have not faced strong personal barriers to participating in Cardano governance, as I actively follow governance processes and attend workshops. However, from a broader community perspective, the main barrier is lack of interest. When the market sentiment is down, people tend to disengage from governance, even if the issue being voted on is important.
+
+There are moments where participation drops simply because the information is not presented in an engaging or accessible way for the general public.
+
+Probe – What information do you find most useful, and what is missing or hard to find?
+I find information most useful when it is easy to understand for normal people. Long, technical explanations discourage participation. What is missing is simplified, well-communicated information that explains governance actions clearly and concisely. The Cardano community is not strong at marketing governance information in a way that attracts wider participation. ","Candidate 3:
+When engaging with delegation, the main challenge is not the act of delegating itself, but understanding governance actions and identifying who to trust. The delegation process would be easier if there were a more accessible platform that explains governance actions in a non-technical way, instead of relying on complex tools or long videos that are difficult to follow.
+
+Probe – What would make delegation easier?
+A simple website or platform with clear explanations, tutorials, and summaries of governance actions designed for non-technical users would significantly improve the delegation experience. ","Candidate 3:
+I tend to look at the people who are the most knowledgeable and who I believe can truly “move the needle” in governance. I rely on trusted representatives who demonstrate understanding, experience, and credibility within the ecosystem.
+
+Probe – What sources do you trust most?
+I trust information coming from well-known and respected ecosystem participants and channels that have demonstrated long-term commitment and understanding of Cardano governance.","Candidate 3:
+One major factor is the difficulty in maintaining communication with DReps after delegation. There is an enormous gap in staying connected, as delegators often do not have access to DReps’ contact information and simply forget about the process after delegating.
+
+Probe – How can DReps maintain trust and engagement?
+DReps should communicate clearly and consistently across multiple platforms, such as Reddit, forums, and X. They should actively use marketing strategies to spread their rationales and decisions so that they reach different segments of the community, rather than relying on a single platform.","Candidate 3:
+Yes, I believe voting power has become more centralized. A small number of DReps hold a large share of voting power. This happens because people tend to trust and delegate to entities that are easily accessible or already well known, such as popular wallets.
+
+Probe – What would help distribute voting power more evenly?
+Community channels such as IOG, Cardano Foundation, and popular educational YouTube channels should be used more actively to promote voting power distribution and highlight a wider range of DReps.","Candidate 3:
+What is most missing is effective circulation of governance information. The tools themselves matter less than how information is presented and shared. Governance needs better marketing and clearer communication, supported by larger community channels and influencers, to ensure information reaches more people.","Candidate 3:
+The most important improvement needed is better information circulation and marketing. Governance information should not rely primarily on X and should be distributed across multiple platforms.
+
+I am also concerned about the long-term sustainability of the DRep role if it remains unpaid. An unpaid role that requires significant time and effort is not sustainable and could create risks such as corruption. Additionally, there should be better mechanisms to identify and penalize bad actors who manipulate voting power. ","Candidate 3:
+Ada Holder, Proposal Submitter / Project Catalyst Veteran, General Community Member / Enthusiast","Candidate 3:
+More than 5 years"
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,

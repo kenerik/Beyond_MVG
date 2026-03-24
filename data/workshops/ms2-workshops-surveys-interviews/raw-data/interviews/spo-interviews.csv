@@ -1,0 +1,136 @@
+﻿"Timestamp","M1-B-S - What information do you find most useful when making governance decisions, and what information is currently missing or hard to find? Probe: How would having better information change how you participate in governance as an SPO?","M4/M5-A-S - Voting power has become more concentrated among DReps since the role was established. What do you think most contributes to this change? Probe: What changes do you think would help distribute voting power more evenly across DReps?","M8-A-S - What factors encourage or discourage you from participating in governance voting? Probe: What would make it easier for SPOs to engage more actively in governance?","M8-B-S - Many SPOs also serve as DReps. Are you aware of any unique challenges do SPOs who also serve as DReps face in governance? Probe: Are there situations where an SPO’s interests might conflict with their role as a DRep?","M9-B-S - What challenges does it create when delegators stay with their SPOs despite SPO inactivity? Probe: What do you think helps SPOs retain their delegators over time?","M10-D-S - What are your expectations for how quickly the Constitutional Committee should review and vote on governance actions? Probe: How do delays in CC review affect your ability to effectively make governance decisions?","What governance tools or resources do you currently use, and what is missing or inadequate for your needs? Probe: If you could have one tool or resource that doesn't exist today, what would it do?","What improvements would you most like to see in Cardano’s governance system? Probe: Are there fundamental changes you believe are needed to how Cardano governance works?","Which of these roles best describes your involvement in the Cardano ecosystem? (Select all that apply)","How long have you been actively serving as a stake pool operator?"
+"46053.6560385532","Candidate 1:
+""What I find most valuable is information that clearly explains the outcomes and real effects of governance decisions on the chain. Too often, relevant information is scattered across different platforms, making it difficult to piece everything together in a meaningful way. Having clear, detailed, and easily accessible explanations, written in simple terms and available in one place, would make it much easier for people to participate efficiently and with confidence.
+As a stake pool operator, I believe better and more accessible information would significantly change how I participate in governance. Many SPOs simply do not have the time to read through every governance action in full, and this often limits the depth of our engagement. Clear, well-structured information that summarizes key implications and outcomes would help streamline decision-making and make better use of the limited time we have available for governance responsibilities. I was also asked to reflect on the issue of voting power concentration among DReps, as it is an important topic that directly affects how effective and representative governance can be.""","Candidate 1:
+""I see two main factors driving the concentration of voting power among DReps. First, within a liquid democracy model, voting power naturally follows the money, and some individuals or entities have consistently had access to significantly more funding than others. Second, delegation behavior is often influenced by convenience rather than conviction. Wallet providers tend to promote themselves or people within their networks, and in many cases delegators choose a DRep simply because they are easily visible in their wallet interface, sometimes just to avoid blocking reward withdrawals. To achieve a more balanced distribution of voting power, I think governance should consider additional parameters beyond the sheer amount of ADA delegated. Factors such as reputation, demonstrated contribution, and other meaningful off-chain activities could play an important role. I also believe it is worth exploring technical mechanisms that place certain restrictions on very large ADA wallets, particularly those linked to founding entities, in order to reduce structural imbalances and support a fairer governance landscape.""","Candidate 1:
+""I am naturally interested in participating in governance and staying actively engaged in the ecosystem, but there are factors that sometimes discourage me. One of the biggest challenges is the lack of recognition for the work I put in, especially when it leads to low delegation. Low delegation makes it harder to secure the chain effectively and maintain my operations as an SPO. Recognition and practical support, such as increased delegation that allows me to mint more blocks and earn rewards;would strongly motivate me to be more active and consistent in governance participation.""","Candidate 1:
+""As someone who serves both as a stake pool operator and a DRep, I experience unique challenges in balancing these two roles. One of my main concerns is the increasing centralization of power, which sometimes makes me question the real impact of my individual vote, even when I invest time and effort into carefully reviewing governance actions. There is also an ongoing debate around incentives, which I see as essential for recognizing the work people put into governance and for keeping participants engaged over the long term. That said, I do not view my responsibilities as an SPO and as a DRep as being in conflict with one another.""","Candidate 1:
+""One challenge I see is that many delegators remain with stake pool operators who have become inactive, largely because their primary concern is continuing to receive rewards rather than paying attention to the SPO’s or DRep’s actual activities. This dynamic makes it harder for active operators to attract and retain delegation. To address this, I believe SPOs must remain visibly and consistently active, not only in maintaining their pools but also by contributing through social media, governance discussions, and broader community engagement. These efforts help attract more conscious delegators who value meaningful contributions and are willing to support operators who are actively involved in strengthening the ecosystem.""","Candidate 1:
+""I suspect that committee members often have limited time and may be treating governance voting as a secondary responsibility. Despite the delays, their input is eventually reflected in governance outcomes, so their role still carries weight. I do not see a clear way to accelerate their participation without providing additional resources or incentives. From my perspective as an SPO, governance actions are evaluated independently, and decisions are made based on our own understanding rather than waiting for committee votes. While I cannot say for certain why the committee’s timing varies, it does not hinder our internal processes. This suggests that, for many participants, internal judgment and analysis matter more than the timing of committee decisions, with the committee playing an important but non-gating role in SPO governance activity.""","Candidate 1:
+""I primarily use the gov tool for voting and follow governance discussions on platforms like Twitter and Coins. From my perspective, the existing tools are generally adequate for participating in governance. That said, I still think there is room for improvement when it comes to clearly explaining the effects and implications of governance actions. Providing this clarity would help lower the technical barriers that some participants face and make it easier for a wider range of people to engage with confidence.""","Candidate 1:
+""I envision a governance model that goes beyond pure ADA stake and incorporates qualitative measures such as reputation and demonstrated contribution. This kind of approach could help reduce the concentration of power and better reward the diverse ways people participate across the ecosystem, making governance more inclusive and representative. I see this as part of a broader shift toward community-funded scaling that moves beyond the current minimum viable governance model. In parallel, my own stake pool is expanding into technical education and development training, with the goal of strengthening technical capacity to support both governance and blockchain operations. This reflects a long-term commitment to sustainability, innovation, and overall ecosystem health, where investment in technical growth complements governance improvements. I also see a clear contrast between current foundation-led delegation efforts and the need for stronger community ownership. Greater transparency and genuine community control would improve trust and effectiveness in governance and better align with Cardano’s decentralized ethos. Achieving this vision will require clear frameworks, strong communication, and broad community buy-in.""","Candidate 1:
+Ada Holder, DRep (Delegated Representative), SPO (Stake Pool Operator), Proposal Submitter / Project Catalyst Veteran, General Community Member / Enthusiast","Candidate 1:
+Longer than 4 years"
+"46063.7301485185","Candidate 2:
+When a governance action happens, is it one an SPO has to vote on or not?","Candidate 2:
+N/A","Candidate 2:
+Implement onchain calidius key voting. today, SPOs have to use their cold keys to vote on governance actions. It's a lot of physical effort to do that. However, there are calidius keys that are in the  ","Candidate 2:
+I have seen that most SPOs are more interested in long term sustainability while DReps are most conservative because they think spending makes the price go down.","Candidate 2:
+We can't get governance actions passed because certain SPOs don't participate and they have a lot of stake. another issue is that a lot of stake is concentrated in major exchanges, and that is a danger to the network especially during hard forks. It looks bad because we are basically asking exchanges for permission to update our chain. To retain delegators, always showing up and being available communication-wise. ","Candidate 2:
+As long as they are present and vote on governance actions within the timeframe they are allowed to vote. ","Candidate 2:
+I use adastat for everything. I can see the actions, see who has voted and who has'nt. This is essentially all I need. ","Candidate 2:
+it would be nice if it were simpler to vote, you had simple notifications and know whether to vote on things. ","Candidate 2:
+Ada Holder, SPO (Stake Pool Operator), Developer","Candidate 2:
+2 to 4 years"
+"46064.826701875","Candidate 3:
+SPOs don't have a lot they need to vote on, but since we vote very little, knowing what it is that comes up and if they are required to vote on it. We need a better guide for SPOs to know if they should vote or not. As someone who is an admin of the SPO lines, i think if they had better alerts telling them when and why they need to participate.","Candidate 3:
+I think if we have a saturation level, it would fix this. If it were possible for a DRep to decide what their limit for voting power is. What if a DRep could set their own saturation cap, sort of like a way for someone to approve delegation. If founding entities could encourage people to spread the stake for decentralization.","Candidate 3:
+- Better tooling to make submitting governance actions easier
+- Better tools for notifying SPOs on what they are required to vote on and why. ","Candidate 3:
+I think SPOs vote on very little that there is very little conflict can exist. The only thing i don't like is that SPOs vote with their full delegation. What if they voted with their pledge and all the delegators can pick their DRep.","Candidate 3:
+CIP 163, which applies to DREPs and SPOS's, proposes setting an expiration date, with the community voting on an initial value of one to five years, so that stake delegated to a pool with no transaction activity in that period would no longer count towards rewards or voting power, thereby encouraging activity, with any transaction resetting the inactivity clock. As for retaining delegators, stake is ""sticky"" right now, with little success in giveaways or other retention methods, attributing the widespread inactivity to the current state of crypto with low prices. Most delegators are also anonymous so it is hard to communicate with them.","Candidate 3:
+I think the constitutional committee should be among the first to vote on governance actions to prevent the waste of time and effort by DReps on proposals that may later be deemed unconstitutional; I believe the constitutional committee's role should be strictly limited to evaluating constitutionality, not offering opinions on the action itself. Generally i don't wait for the CC to vote but I know other SPOs ae bothered by it.","Candidate 3:
+I use govtools and tempo.vote. What's missing is a platform that allows one to submit parameter actions not just people who know how to use the CLI. The one tool i would need is an interface for everyday users to go and participate in all kinds of ways. There should be a medium for me to put on a proposal and we community fund it.","Candidate 3:
+Decentralization better tooling and documentation ","Candidate 3:
+Ada Holder, DRep (Delegated Representative), SPO (Stake Pool Operator)","Candidate 3:
+2 to 4 years"
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
