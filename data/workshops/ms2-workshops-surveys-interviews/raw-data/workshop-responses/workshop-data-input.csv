@@ -1,0 +1,173 @@
+﻿"Timestamp","Workshop Date","Number of Participants","Stakeholders Included","Facilitator Name or Group","M1-A-S - What barriers, if any, have you encountered when trying to participate in Cardano governance - Can you describe a specific moment when you wanted to participate but didn’t or couldn’t? Probe: What information do you find most useful when making governance decisions, and what information is currently missing or hard to find?","M3-A-S - What factors do you think cause ada owners to change their DRep delegation? Have you had experience with an event that you believe has led to a change in delegated voting power? Probe: How can DReps better maintain the trust and engagement of their delegators?","M4/M5-A-S - Do you think DRep voting power has become more concentrated since the role was established? If so what do you think contributes most to this change? Probe: What changes do you think would help distribute voting power more evenly across DReps?","M6-B-S - What challenges do DReps and CC members face when publishing rationales for their votes? Probe: What would make it easier to publish rationales consistently?","M7-A-S - What do you think encourages or discourages people from becoming active DReps? Probe: What induces DReps to stop serving as a DRep?","M8-A-S - What factors encourage or discourage SPOs from participating in governance voting? Probe: What would make it easier for SPOs to engage more actively in governance?","M10-C-S - What factors affect how quickly the Constitutional Committee can review and vote on governance actions? Probe: What changes would help the CC respond more efficiently?","What governance tools or resources do you currently use, and what is missing or inadequate for your needs? ","What improvements would you most like to see in Cardano’s governance system?","Optional: Please enter links to any templates, summaries, transcripts, or recordings that were created during the workshop."
+"46052.7213626852","27.01.26 00:00:00","maybe ~16","DReps, SPOs, Ada Owners / Holders, CC Members, Intersect Committee Members","Beyond MVG - 27.01.26",,,"Promoting self-voting
+Promoting individual dreps or yourself
+Lack of spaces for promoting dreps
+Prior connections with large stakeholders
+Attending spaces
+Wallets and drep platforms user experience
+Protocol Requirement to select a dRep to withdraw staking rewards leads to choosing the wallet default
+Current Incentives and Control Mechanisms
+The complexity of the governance system
+How do larger stakeholders act on the chain?
+Complexity of the proposals (how to read them and access the appendix)
+sticky delegate, delegate and forget about it until something breaks
+Lack of drep evaluations
+Lack of proposal outcomes
+Some Governance Actions are already completed and acted on before had the time to analyse effects
+Information gap between what Drep knows and what the general Drep delegator knows",,,"Some proposals are ratified quickly before SPOs get around to voting
+Lack of tools for: batch voting, cold key management, update feed coordination, information assessment and its validation tools
+Quantity of proposals
+Lack of Proposal awareness
+Lack of incentives (somebody or something to value the choice and rational)
+Unclarity what behaviours are currently incentivised and how it affects our ecosystem
+There are a variety of reasons why someone becomes SPO, from scale to not being interested in engaging in governance at all to being part of every decision.
+Complexity of the proposals
+Quality of the constitution to help assess parameters
+Having prior experience with related activities and technology
+Change in the delegation amount
+What information is shown on SPO explorers
+How information is shown on SPO explorers (including lack of guidelines)
+Amount of time spent on governance action in the given time period (both operational and technical)
+The amount of delegation SPO currently has
+The amount of impact voting has
+Lack of incentives
+Lack of standards across tools","How well written are Published Governance actions?
+The number of interactions done on the Governance Action
+The time it takes for Governance Action proposers to communicate with CC members
+The amount of CC Seat positions
+Geographical differences
+Timezone differences
+Each Member has their own Operational requirements
+The Number of active proposals at that time
+The amount of supporting materials that come with proposals
+Proposal complexity and readability
+Voting Fatigue
+Lack of proposal templates
+The amount of pressure CC members get for not voting
+CC Member other responsibilities not related to the Constitution (for example, also a Drep)
+Volume of discussion in social media platforms (both privately and publicly)
+Lack of explicit requirements for CC members
+Uncertainty on how is the efficient decision making defined (quickness?, resolution?)
+The time it takes to learn set up and vote with CC keys
+Constitutional Amendment changes can affect how proposals should be reviewed
+The size of CC Member team/community
+The perceived priority by CC member
+No standard tooling to collecting feedback
+The readability of the Constitution
+Voting early may affect how others behave, depending on status (may intentionally withhold decision)
+hard to show the work of sense making
+No clear communication channels for all CC members to communicate with rest of the community",,,"https://docs.google.com/document/d/1sxEtXD_OCdlsK_D9fyMpr2vZgA7mLdWuhopLqdGCQng, https://docs.google.com/document/d/1zNafPkUVRytf1q43Al1bekm_WDyq2w9-f9-0Z1ubwLE, https://docs.google.com/document/d/1E94VrjHRo4IpUc6_wYb1bC6gPrkWrnt_hss9jAwhBgo, https://drive.google.com/drive/folders/1Snl_LYz1ziC80fR2tMEFyoVaacCKKEsW"
+"46054.9368651157","31.01.26 00:00:00","13","DReps, SPOs, Ada Owners / Holders, CC Members, Intersect Committee Members","Beyond MVG","- Unclear who are responsible for the tools we use (used ekklesia)
+- Lack of Onboarding and Guiding material, which makes it difficult to start participating
+- Perceived lack of expertise, where we choose not to engage
+- Difficult to get poll information out to a wider audience.
+- There is a lot of cognitive overload that takes hours to understand before even coming to a conclusion on what to vote on
+- perceived Incentive and impact mismatch, reading proposals does not make economic sense both in terms of time spent and proposal outcomes
+- The proposal outcomes and decision impact is unmeasureable
+- Lack of administrative coordination creates duplicated effort and fatigue (Intersect does not support enough, Calendars often conflict or get outdated, committees don’t communicate with eachother)
+- Difficult user experience to engage and debate
+- Uncertainty about prioritisation
+- Unclear about the target audience
+- Overconcentration of the decision power on a few dreps makes devs and builders' lives overdependent on their opinion and decisions
+- Cost of engaging with governance (Drep registration deposit; Gov action submissions)
+- Lack of perceived effort in ADA deployment for governance from abstation
+- Inconsistency between governance infrastructure (databases, wallets, explorers)
+- Lack of funding for community tooling that makes engagement easier
+- Important governance discussions happen in places not designed for decision-making
+- Participation requires sustained time investment, not episodic engagement","- Are people aware of how to change DRep delegation?
+- Governance is too complex to assess outcomes
+- Governance tools are not standardised and measure different things
+- Lack of incentives to pay attention
+- Lack of Governance Tools to poll, communicate with your delegate or split delegation amounts
+- Lack of frameworks that help to label, score and compare dreps
+- Voting on proposals that are perceived to be self or close relationship funding
+- Too much information scattered everywhere (small impact)
+- What values does Drep expect to represent and how they follow them?
+- DRep makes an unpopular vote or votes a way the delegator doesn't agree with. 
+- Someone else shows up who aligns with their views
+- Drep doesn’t vote at all or seems inactive
+- lack of onboarding sites for Cardano Governance
+- How many dreps choose to Auto Abstain?
+- How do the most popular dreps vote?
+- Expectations for Dreps to use various communication platforms (Forum, X, Discord, Tempo, etc)
+- The existing amount of ADA, DRep that has accrued may affect how new people perceive them
+- When DReps propose new and Fresh ideas
+- When current DReps people get too popular and there are other less delegated dreps available
+- New governance design and frameworks that the majority start to use
+- Dreps over time may start to spend more time debating with other Dreps instead of communicating with their delegators or contributing to governance spaces.
+- Delegation shifts driven by social visibility rather than governance performance",,"- Over explaining
+- How to provide messages that do not seem too long?
+- How to provide messages that align with decisions while there is a conflict of interest?
+- No shared norms for what a “good rationale” looks like
+- How to make interesting and readable rationales?
+- Difficult User Experience to help publish rationale
+- Expectations for Dreps to pay attention to governance action discussions
+- Expectations for Dreps to understand the impact of governance action
+- Difficult to understanding impact)
+- Feeling that I will underperform with my rationale
+- Feeling that I lose delegation if I provide a rationale
+- Unclear if the rationale has been valuable
+- How to communicate with delegators?
+- Lack of affordable tools to help label and communicate with delegators
+- Single CC members may
+- Managing Multisig DReps and maintaining smart contracts
+- Unclear where to find general governance measurements
+- lack of safe spaces to discuss governance actions",,,,,,"https://docs.google.com/document/d/1sxEtXD_OCdlsK_D9fyMpr2vZgA7mLdWuhopLqdGCQng, https://docs.google.com/document/d/1ATAvC65Z3nHTdvkl1RHHWbY6xAxYAsbjhYXKCYsw7oc, https://docs.google.com/document/d/15RXqtSAd9ZZIkITHIBeAUHVeM6-EMOGBG14zbgqnKAc/edit?tab=t.wihsgd7d4ojv, https://youtu.be/Xopq9rT-L9U"
+"46073.8956110532","18.02.26 00:00:00","14 speakers + idk how many visitors and listeners","DReps, SPOs, Ada Owners / Holders, CC Members, Intersect Committee Members","Matthew Capps (cryptstitution)","ADA owners with small ADA amounts (e.g., ~100 ADA) lose faith that their participation matters, so they disengage.
+People feel they lack governance understanding; institutional knowledge is missing or fragmented, worsened by rapid constitutional changes causing misalignment.
+Governance apps and websites are confusing; wallets often don’t support participation directly, forcing users to hunt for separate sites and resources.
+Lack of clarity on who to trust/delegate to; difficulty assessing DReps’ work and track record.
+Some communities don’t know where to find governance circles or the social tools
+Participation requires regularly checking multiple disconnected platforms (websites, forums, spaces) with no integration
+Direct voting thresholds (e.g., 500 ADA) feel expensive/unclear
+Inability to vote on some proposals while delegating on others in the same epoch reduces agency.","People change delegation when they can’t assess DReps’ work, rationales, or on-chain actions.
+Visibility and discoverability how delegation shifts.
+Forced delegation and default/self-serving wallet options can move voting power without genuine intent, prompting later corrections or distrust.
+Some delegators choose DReps based on consistent rationale publishing.
+DReps can maintain trust by making rationales easy to find, consistent, and tied to actions.
+Desire for impact analytics","Voting power is described as heavily held by the top 5–10 DReps, seen as unethical/unfair and having high negative impact.
+Users who didn’t care about governance were pushed into delegation decisions; defaults in wallets can concentrate power.
+“Based on who people know, not what they do” contributes to clustering around known figures.
+Groupthink and dominance by technical cohorts may reduce diversity of representation and reinforce concentration.
+View that 350 DReps is not enough, push for more dreps 3000+ or even 30000+.
+Prohibit/limit auto-delegation defaults without explicit user intent.
+Consider delegation reset mechanisms.
+Improve DRep discovery based on rationales and on-chain actions (rather than IDs or popularity).","Current tooling ecosystem is fragmented; publishing and surfacing rationales consistently is harder than it should be.
+a DRep publishes rationales for everything and wants delegators to find them via rationale, yet discoverability is limited.
+The ongoing burden of checking multiple platforms and sites discourages consistent rationale workflows.
+Integrated interfaces (wallet + governance + rationale publishing), standardized rationale surfaces, and better indexing/search of rationales tied to on-chain actions.","Becoming active requires sustained multi-platform engagement with poor integration.
+If representation is social-based rather than merit/contribution-based, it can deter serious contributors.
+Concern that many participate “just for rewards,” and increased policing might drive people away or lead to gaming.
+Interest in “what helps/hurts DRep visibility” and anticipating Beyond MVG representations suggests better metrics could motivate participation.
+Burnout from interaction load.
+disillusionment if governance remains “cognitively expensive,” unclear, or perceived as captured by top holders.","If participation requires separate sites and fragmented tooling, SPO engagement is also discouraged.
+Regular monitoring across multiple platforms discourages consistent SPO voting.
+Governance participation embedded into primary tools (including wallets and integrated dashboards), clearer/centralized information, and reduced friction to track actions and deadlines.","Rapid constitutional evolution created gaps/misalignment in shared understanding, complicating consistent review.
+Lack of precision measurement tooling and weak documentation make it hard to assess proposals and evidence efficiently.
+If proposers/CC members must coordinate across disconnected tools and sources, review cycles slow.
+Better templates/documentation standards, integrated information surfaces, and clearer evidence/data representations for governance actions.","websites, forums and spaces. Wallets often lack full governance participation features.
+Missing:
+Integrated governance participation in wallets.
+Precision measurement + analytics tooling to interpret governance data.
+Centralized, discoverable documentation and institutional knowledge.
+DRep discovery tools based on rationales and on-chain actions.
+Cross-platform integration to reduce repeated manual checking.","Reduce concentration and improve fairness: Address top-heavy DRep power distribution; prevent unintentional auto-delegation; consider delegation resets; improve distribution mechanisms.
+
+Make participation easier and more meaningful: Lower cognitive cost, integrate tools, increase voting flexibility (mix delegation/direct voting), clarify why thresholds exist.
+
+Strengthen knowledge and legitimacy signals: Improve education, documentation, and institutional knowledge; shift representation signals toward contribution/on-chain actions + rationales.
+
+Increase diversity and inclusion: Improve access to governance spaces/tools for underrepresented regions; ensure low-holding communities are not ignored
+
+Measure what matters: Better visibility into how governance actions affect stake movements and network health; support Beyond MVG-style data representation to rebuild trust.","https://x.com/cryptstitution/status/2024152278169505976, https://miro.com/app/board/uXjVGKVvy50=/?moveToWidget=3458764660628861862&cot=14"
+"46073.926158206","29.01.26 00:00:00","2","Ada Owners / Holders","Beyond MVG - 29.01.26","technical issues with audio and meeting transcription qualities or access.
+time zone differences and unclear communication about upcoming events.
+lack of transparency and community involvement.
+Unresolved ‘constitutional debt’ is being discussed in unrecorded conversations.
+","disillusionment among community members where power remains with the founding entities.
+delays in decision-making or token price can affect perceived effectiveness, influencing delegation changes indirectly.
+lack of transparency of unrecorded conversations erode trust.
+DReps need clearer explanations, stronger comms, and evidence","when participation is low, power tends to concentrate among the active few",,"Swarm stopped Drep activity, perceived low impact, centralization (over time only few remained to assess governance actions, which incrased burden to remaining few + mulstisig required infrastructure maintenance and social processes",,"process overhead affecting responsiveness.
+understanding tradeoffs between speed and quality",,"more open and interactive engagements.
+address constitutional debt.
+broader stakeholder engagement.","https://drive.google.com/drive/folders/1p8eldSsjl_OXemXtt-IBQNI5ySYocmpW"

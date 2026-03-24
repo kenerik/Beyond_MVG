@@ -1,0 +1,14 @@
+﻿"Timestamp","What are the projects you’ve been part of building in the Cardano ecosystem? Probe IF PROJECT IS UNFAMILIAR TO INTERVIEWER:  Can you share some links where we can learn more?","What new opportunities or challenges have your project faced since Cardano's on-chain voting system went live following the Chang Hard Fork? Probe:  How, if at all, did you change your approach to opportunities in the Cardano ecosystem?","BUL-2. Governance Tooling [Governance Tooling Builders Only]
+Question: What challenges do you face in providing governance tooling for Cardano?  Probe:  Are they more technical, economic, or social challenges?","M1-B-S. Information Gaps
+Question: Do you vote on governance actions?  IF YES →M1-B-S - What information do you find most useful when making governance decisions, and what information is currently missing or hard to find? Probe: How would having better information change how you evaluate proposals for constitutional compliance?","Closing question: What improvements would you most like to see in Cardano’s governance system?","Closing Question [Governance Tooling Builders Only]
+Would you find it valuable for a CIP to be developed that standardizes how tooling measures on-chain governance metrics?","Which of these roles best describes your involvement in the Cardano ecosystem? (Select all that apply)"
+"46059.4045246644","Candidate 1:
+Elm Cardano, Cardano Ballot and Aiken ","Candidate 1:
+- Getting users. 
+- Sustainability - and i focused on using tools that make it cheaper to maintain.","Candidate 1:
+- Building is hard, not enough documentation to make contributions
+- Expensive because resources need to be bought or rented","Candidate 1:
+I don't vote, I delegate my vote to a DRep","Candidate 1:
+It's generally not hard to build the tool, but the social aspect of building in cardano governance that is lacking a lot.","Candidate 1:
+I think so. There are some things related to info actions that are unspecified. The way to measure it depends on things like ratio of stake","Candidate 1:
+Ada Holder, Developer, Governance Tooling Projects"
