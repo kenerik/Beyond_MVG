@@ -65,7 +65,7 @@ Beyond_MVG/
 │       └── SPO-Metrics
 │       └── DRep-Metrics
 │       └── CC-Metrics
-├── Workshop Data (Soon))
+├── Workshop Data (Soon)
 ├── .github/
 │   └── ISSUE_TEMPLATE/          # Templates for feature requests
 ├── CHANGELOG.md                 # Version history and document updates
