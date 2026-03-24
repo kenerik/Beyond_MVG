@@ -56,10 +56,10 @@ Beyond_MVG/
 │   └── TBD
 ├── data/                        # Data results from report queries and Generated visualizations
 │   ├── On-chain-measurements-epoch-537-609
-│      └── ada-owner-metrics
-│      └── SPO-Metrics
-│      └── DRep-Metrics
-│      └── CC-Metrics
+│   |   └── ada-owner-metrics
+│   |   └── SPO-Metrics
+│   |   └── DRep-Metrics
+│   |   └── CC-Metrics
 │   └── On-chain-visuals-epoch-537-609
 │      └── ada-owner-metrics
 │      └── SPO-Metrics
