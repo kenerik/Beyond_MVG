@@ -20,20 +20,22 @@ The project goes **beyond the Minimum Viable Governance (MVG)** baseline by esta
 ## Authors
 
 Commissioned by Cardano DReps; delivered by IO and Cardano Community Members including:
+Alphabetical order
 
 | Name | Affiliation |
 |---|---|
+| Danielle Stanko | IOG |
 | Fanny Wijaya | — |
+| IOG | - |
+| JM Martinez Felices | IOG |
+| Kelvin Peter | IOG |
 | Ken Erik Oelmheim | — |
 | Maureen Wepngong | Giiyo Tech |
 | Max van Rossem | — |
 | Nana Safo | Wada Global |
 | Richmond Oppong | Wada Global |
 | Tevo Kask | — |
-| IOG | - |
-| Danielle Stanko | IOG |
-| Kelvin Peter | IOG |
-| JM Martinez Felices | IOG |
+
 
 Special thanks to everyone that contributed, had critical eyes, debated with us, responded to surveys,  and made this report possible.
 
