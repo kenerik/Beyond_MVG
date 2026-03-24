@@ -10,6 +10,7 @@ All notable changes to the Beyond MVG research outputs are documented here.
 - **Governance Measurement Framework**: Removed references to Blockfrost API for verification; cardano-db-sync is now the sole primary data source
 - **Governance Metrics Manual**: Updated data source references to align with Measurement Framework
 - **State of Governance Report Outline**: Minor consistency updates across sections
+- **IOG new brand guide implemented 
 
 ---
 
