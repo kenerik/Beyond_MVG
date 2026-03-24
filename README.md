@@ -54,7 +54,17 @@ Beyond_MVG/
 │   ├── Cardano Node Setup & Configuration
 │   ├── creating visualizations for each metric
 │   └── TBD
-├── data/                        # Data results from report queries
+├── data/                        # Data results from report queries and Generated visualizations
+│   ├── On-chain-measurements-epoch-537-609
+│      └── ada-owner-metrics
+│      └── SPO-Metrics
+│      └── DRep-Metrics
+│      └── CC-Metrics
+│   └── On-chain-visuals-epoch-537-609
+│      └── ada-owner-metrics
+│      └── SPO-Metrics
+│      └── DRep-Metrics
+│      └── CC-Metrics
 ├── TBD
 ├── .github/
 │   └── ISSUE_TEMPLATE/          # Templates for feature requests
