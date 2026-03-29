@@ -8,6 +8,7 @@
 [![Cardano](https://img.shields.io/badge/Cardano-CIP--1694-blue)](https://cips.cardano.org/cip/CIP-1694)
 [![Documents](https://img.shields.io/badge/documents-3-orange)](docs/)
 [![Metrics](https://img.shields.io/badge/metrics-12-blueviolet)](README.md#governance-metrics-at-a-glance)
+[![Version](https://img.shields.io/badge/version-1.1.0-lightgrey)](CHANGELOG.md)
 
 ## Overview
 
@@ -19,13 +20,12 @@ The project goes **beyond the Minimum Viable Governance (MVG)** baseline by esta
 
 ## Authors
 
-Commissioned by Cardano DReps; delivered by IO and Cardano Community Members in alphabetical order:
+Commissioned by Cardano DReps; delivered by IOG and Cardano Community Members in alphabetical order:
 
 | Name | Affiliation |
 |---|---|
 | Danielle Stanko | IOG |
-| Fanny Wijaya | — |
-| IOG | - |
+| Fanny Wijaya | - |
 | JM Martinez Felices | IOG |
 | Kelvin Peter | IOG |
 | Ken Erik Oelmheim | — |
@@ -33,13 +33,11 @@ Commissioned by Cardano DReps; delivered by IO and Cardano Community Members in 
 | Max van Rossem | — |
 | Nana Safo | Wada Global |
 | Richmond Oppong | Wada Global |
-| Tevo Kask | — |
+| Tevo Kask | SWARM |
 
+Special thanks to everyone that contributed, had critical eyes, debated with us, responded to surveys, and made this report possible.
 
-Special thanks to everyone that contributed, had critical eyes, debated with us, responded to surveys,  and made this report possible.
-
-CIVICS Governance Health Working Group , Nicolas Cerny, Cathy Hermstad Patanakarun, Larisa Mcfarlane, Vaibhav Solanki, Thomas Lindseth, Mike Hornan, Cardano over coffee, 45B - Cardano Enablement, Epoch end, Cardano budget committee, Beatrice Anihiri, Will Eddie, Arman Abid, Van Rossem family, Cardano foundation, Charles Hoskinson and all employees at IOG, CIP-1694 contributors, 
-
+CIVICS Governance Health Working Group , Nicolas Cerny, Cathy Hermstad Patanakarun, Larisa Mcfarlane, Vaibhav Solanki, Thomas Lindseth, Mike Hornan, Cardano over coffee, 45B - Cardano Enablement, Epoch end, Cardano budget committee, Beatrice Anihiri, Will Eddie, Arman Abid, Van Rossem family, Cardano foundation, Charles Hoskinson and all employees at IOG, CIP-1694 contributors,
 
 ---
 
@@ -47,31 +45,42 @@ CIVICS Governance Health Working Group , Nicolas Cerny, Cathy Hermstad Patanakar
 
 ```
 Beyond_MVG/
-├── docs/                        # Core research documents (PDF)
-│   ├── State_of_Governance_Measurement_Framework.pdf (Soon)
-│   ├── Governance_Metrics_Manual.pdf (Soon))
-│   ├── State_of_Governance_Report_Outline.pdf
-│   ├── Cardano Node Setup & Configuration
-│   ├── Creating visualizations for each metric (Soon)
-│   └── TBD
-├── data/                        # Data results from report queries and Generated visualizations
-│   ├── On-chain-measurements-epoch-537-609
-│   |   └── ada-owner-metrics
-│   |   └── SPO-Metrics
-│   |   └── DRep-Metrics
-│   |   └── CC-Metrics
-│   └── On-chain-visuals-epoch-537-609
-│       └── ada-owner-metrics
-│       └── SPO-Metrics
-│       └── DRep-Metrics
-│       └── CC-Metrics
-├── Workshop Data (Soon)
+├── docs/                                         # Core research documents (PDF)
+│   ├── M1-1D_ Governance Metrics Manual.pdf
+│   ├── M1-1D_ State of Governance - Report Outline
+│   ├── M1-1D_ State of Governance Measurement Framework
+│   └── cardano-node-setup & Query DbSync - step by step   # Node setup reference
+│   └── Plan for creating visualizations step by step (TBD according to feedback)
+│
+├── data/                                         # Data results from report queries and generated visualizations
+│   ├── On-chain-measurements-epoch-537-609/      # Raw CSV metric data (epochs 537–609)
+│   │   ├── ada-owner-metrics/                    # M1–M3: Voting %, delegators, stickiness
+│   │   ├── DRep-Metrics/                         # M4–M7: Gini, Nakamoto, rationale, net change
+│   │   ├── SPO-Metrics/                          # M8–M9: SPO engagement & stickiness
+│   │   └── CC-Metrics/                           # M10–M12: Response time, rationale, abstain rate
+│   │
+│   ├── On-chain-visuals-epoch-537-609/           # Chart exports (PNG) for each metric
+│   │   ├── ada-owner-metrics/
+│   │   ├── DRep-metrics/
+│   │   ├── SPO-metrics/
+│   │   └── CC-metrics/
+│   │
+│   └── workshops/
+│       └── ms2-workshops-surveys-interviews/     # MS2 qualitative data
+│           ├── raw-data/
+│           │   ├── surveys/                      # 9 CSVs across 5 stakeholder groups (incl. JPN)
+│           │   ├── interviews/                   # 5 CSVs — semi-structured interview responses
+│           │   └── workshop-responses/           # Facilitator workshop summaries (4 sessions)
+│           ├── visuals/                          # 7 Miro board PDF exports by topic
+│           ├── sources.md                        # Links to Google Sheets & Miro boards
+│           └── README.md                         # Full data manifest and metric reference
+│
 ├── .github/
-│   └── ISSUE_TEMPLATE/          # Templates for feature requests
-├── CHANGELOG.md                 # Version history and document updates
-├── CONTRIBUTING.md              # How to contribute to this project
-├── LICENSE                      # MIT License
-└── README.md                    # This file
+│   └── ISSUE_TEMPLATE/                           # Templates for feature requests
+├── CHANGELOG.md                                  # Version history and document updates
+├── CONTRIBUTING.md                               # How to contribute to this project
+├── LICENSE                                       # MIT License
+└── README.md                                     # This file
 ```
 
 ---
@@ -116,7 +125,10 @@ The template and structure for producing periodic State of Cardano Governance re
 ## Data Sources
 
 - **Cardano Node + cardano-db-sync** — Primary on-chain data source for all quantitative metrics
-- **Epoch boundary snapshots** — Used for all delegation and voting metrics per CIP-1694
+- **Epoch boundary snapshots** — On-chain CSV measurements for epochs 537–609 available in [`data/On-chain-measurements-epoch-537-609/`](data/On-chain-measurements-epoch-537-609/)
+- **Surveys, interviews & workshops** — Qualitative data from 5 stakeholder groups (ADA holders, DReps, SPOs, CC Members, Builders) including Japanese community responses, available in [`data/workshops/ms2-workshops-surveys-interviews/`](data/workshops/ms2-workshops-surveys-interviews/)
+- **Miro board exports** — 7 workshop visual PDFs mapping community discussions to governance metrics
+- **Google Sheets (original workbook)** — [Full 16-sheet workbook](https://docs.google.com/spreadsheets/d/1_FWuTPjI0COb9A3PiQB_8g1U8ruAVUf5VRGSvoP2I18/edit) with all raw survey and interview data
 
 ---
 
@@ -147,15 +159,15 @@ We welcome contributions from the Cardano community. Please read [CONTRIBUTING.m
 
 ## License
 
-
 This project is licensed under the [MIT License](LICENSE).
+
 ```
   ____                             _   __  ____      _______ 
  |  _ \                           | | |  \/  \ \    / / ____|
  | |_) | ___ _   _  ___  _ __   __| | | \  / |\ \  / / |  __ 
  |  _ < / _ \ | | |/ _ \| '_ \ / _` | | |\/| | \ \/ /| | |_ |
  | |_) |  __/ |_| | (_) | | | | (_| | | |  | |  \  / | |__| |
- |____/ \___|\__, |\___/|_| |_|\__,_| |_|  |_|   \/   \_____|
+ |____/ \___|\___, |\___/|_| |_|\__,_| |_|  |_|   \/   \_____|
               __/ |                                          
              |___/                                      2026
 ```
