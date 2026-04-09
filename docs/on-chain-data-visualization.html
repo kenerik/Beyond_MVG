@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>On-Chain Data Visualization – Derivation Plan</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg2: #161b22;
+    --bg3: #21262d;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text2: #8b949e;
+    --blue: #58a6ff;
+    --blue-bg: #0d1e36;
+    --green: #3fb950;
+    --green-bg: #0d2817;
+    --purple: #bc8cff;
+    --purple-bg: #1a1433;
+    --teal: #39d353;
+    --amber: #d29922;
+    --amber-bg: #2d1e00;
+    --red: #f85149;
+    --orange: #e8893c;
+    --card-radius: 10px;
+    --mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  #prog { position: fixed; top: 0; left: 0; height: 2px; width: 0; background: var(--blue); z-index: 99; transition: width 0.1s; }
+
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px 80px; }
+
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 40px 0 32px;
+    margin-bottom: 40px;
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--blue-bg); color: var(--blue);
+    border: 1px solid #1f4778;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
+    padding: 3px 10px; border-radius: 20px; margin-bottom: 14px;
+  }
+  header h1 { font-size: 32px; font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: 10px; }
+  header p { color: var(--text2); font-size: 16px; max-width: 680px; }
+
+  /* TOC */
+  .toc { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--card-radius); padding: 20px 24px; margin-bottom: 40px; }
+  .toc h3 { font-size: 13px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 24px; }
+  .toc a { color: var(--blue); text-decoration: none; font-size: 14px; padding: 3px 0; display: flex; align-items: center; gap: 6px; transition: color 0.15s; }
+  .toc a:hover { color: #79c0ff; }
+  .toc-num { color: var(--text2); font-size: 12px; min-width: 20px; }
+
+  /* Section */
+  .section { margin-bottom: 56px; }
+  .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+  .section-num { background: var(--bg3); border: 1px solid var(--border); color: var(--text2); font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 6px; letter-spacing: 0.04em; }
+  .section-header h2 { font-size: 22px; font-weight: 600; }
+
+  /* Metric card */
+  .metric-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--card-radius); margin-bottom: 36px; overflow: hidden; }
+  .metric-card-header { background: var(--bg3); border-bottom: 1px solid var(--border); padding: 14px 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .metric-id { font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--blue); background: var(--blue-bg); border: 1px solid #1f4778; padding: 3px 10px; border-radius: 6px; white-space: nowrap; }
+  .metric-title { font-size: 16px; font-weight: 600; }
+  .metric-body { padding: 20px; }
+
+  /* Spec grid */
+  .spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+  @media(max-width:640px) { .spec-grid { grid-template-columns: 1fr; } .toc-grid { grid-template-columns: 1fr; } }
+  .spec-item { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }
+  .spec-label { font-size: 11px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 5px; }
+  .spec-value { font-size: 13px; color: var(--text); line-height: 1.5; }
+  .csv-cols { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+  .col-tag { background: var(--bg); border: 1px solid var(--border); font-family: var(--mono); font-size: 11px; color: var(--amber); padding: 2px 8px; border-radius: 4px; }
+
+  /* Chart image */
+  .chart-preview { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 20px; }
+  .chart-preview-header { padding: 8px 14px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .chart-label { font-size: 12px; color: var(--text2); display: flex; align-items: center; gap: 6px; }
+  .png-tag { background: #1a1f00; color: #b3c442; border: 1px solid #3a4a00; font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 4px; letter-spacing: 0.04em; }
+  .chart-preview img { width: 100%; display: block; }
+
+  /* Steps */
+  .steps-heading { font-size: 13px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
+  .steps-list { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
+  .steps-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--text2); }
+  .step-n { background: var(--bg3); border: 1px solid var(--border); color: var(--text2); font-size: 11px; font-weight: 700; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+
+  /* Code blocks */
+  .code-wrap { position: relative; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--card-radius); overflow: hidden; }
+  .code-header { display: flex; align-items: center; justify-content: space-between; padding: 8px 14px; border-bottom: 1px solid var(--border); background: var(--bg3); }
+  .code-lang { font-size: 12px; color: var(--text2); font-family: var(--mono); display: flex; align-items: center; gap: 6px; }
+  .py-tag { background: #001a2d; color: #4ec9b0; border: 1px solid #1f4050; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px; letter-spacing: 0.04em; }
+  .copy-btn { background: none; border: 1px solid var(--border); color: var(--text2); font-size: 12px; padding: 4px 10px; border-radius: 6px; cursor: pointer; font-family: inherit; transition: all 0.15s; display: flex; align-items: center; gap: 5px; }
+  .copy-btn:hover { background: var(--bg2); color: var(--text); border-color: #58a6ff44; }
+  .copy-btn.copied { color: var(--green); border-color: var(--green); }
+  pre { padding: 16px; overflow-x: auto; font-family: var(--mono); font-size: 12.5px; line-height: 1.65; color: #e6edf3; tab-size: 4; max-height: 420px; overflow-y: auto; }
+
+  /* Intro info box */
+  .info-box { display: flex; gap: 12px; padding: 14px 16px; background: var(--blue-bg); border: 1px solid #1f4778; border-radius: 8px; margin-bottom: 28px; font-size: 14px; color: var(--text2); line-height: 1.5; }
+  .info-box svg { flex-shrink: 0; margin-top: 2px; color: var(--blue); }
+
+  /* Deps table */
+  .deps-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 20px; }
+  .deps-table th { text-align: left; color: var(--text2); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; padding: 8px 12px; border-bottom: 1px solid var(--border); background: var(--bg3); }
+  .deps-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); }
+  .deps-table tr:last-child td { border-bottom: none; }
+  .deps-table code { font-family: var(--mono); color: var(--amber); font-size: 12px; }
+
+  .cat-badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 9px; border-radius: 4px; letter-spacing: 0.04em; }
+  .cat-ada { background: #0d2817; color: #3fb950; border: 1px solid #1a4028; }
+  .cat-drep { background: var(--blue-bg); color: var(--blue); border: 1px solid #1f4778; }
+  .cat-spo { background: var(--amber-bg); color: var(--amber); border: 1px solid #4a3800; }
+  .cat-cc { background: var(--purple-bg); color: var(--purple); border: 1px solid #3a1a5c; }
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<div class="wrap">
+
+<!-- Header -->
+<header>
+  <div class="badge">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    Cardano Governance Measurement Framework
+  </div>
+  <h1>On-Chain Data Visualization<br>Derivation Plan</h1>
+  <p>Step-by-step derivation of each governance metric visualization from CSV epoch data (epochs 537–609). Covers all 12 metrics across Ada Owner, DRep, SPO, and Constitutional Committee categories.</p>
+</header>
+
+<!-- TOC -->
+<div class="toc">
+  <h3>Contents</h3>
+  <div class="toc-grid">
+    <a href="#setup"><span class="toc-num">0</span> Tools &amp; Setup</a>
+    <a href="#m3-2-1"><span class="toc-num">2.1</span> Gini Coefficient</a>
+    <a href="#m3-1-1"><span class="toc-num">1.1</span> Ada Actively Voting</a>
+    <a href="#m3-2-2"><span class="toc-num">2.2</span> Nakamoto Coefficient</a>
+    <a href="#m3-1-2"><span class="toc-num">1.2</span> Unique Delegators</a>
+    <a href="#m3-2-3"><span class="toc-num">2.3</span> DRep Rationale</a>
+    <a href="#m3-1-3"><span class="toc-num">1.3</span> DRep Stickiness</a>
+    <a href="#m3-2-4"><span class="toc-num">2.4</span> DRep Net Change</a>
+    <a href="#m3-3-1"><span class="toc-num">3.1</span> SPO Engagement</a>
+    <a href="#m3-4-1"><span class="toc-num">4.1</span> CC Response Time</a>
+    <a href="#m3-3-2"><span class="toc-num">3.2</span> SPO Stickiness</a>
+    <a href="#m3-4-2"><span class="toc-num">4.2</span> CC Rationale</a>
+    <a href="#m3-4-3"><span class="toc-num">4.3</span> CC Abstain Rate</a>
+    <a href="#styling"><span class="toc-num">§</span> Styling Standards</a>
+  </div>
+</div>
+
+<!-- ─────────────────── SECTION 0: SETUP ─────────────────── -->
+<div class="section" id="setup">
+  <div class="section-header">
+    <span class="section-num">§ 0</span>
+    <h2>Tools &amp; Setup</h2>
+  </div>
+
+  <div class="info-box">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    <span>All visualizations are generated using <strong style="color:var(--text)">Python 3.10+</strong>. Each script reads a single CSV per metric, transforms epoch-based data, and exports an 800×500 px PNG.</span>
+  </div>
+
+  <table class="deps-table">
+    <thead><tr><th>Package</th><th>Version</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td><code>pandas</code></td><td>≥ 2.0</td><td>Data loading, manipulation, and CSV parsing</td></tr>
+      <tr><td><code>matplotlib</code></td><td>≥ 3.7</td><td>Primary visualization library for creating charts</td></tr>
+      <tr><td><code>numpy</code></td><td>≥ 1.24</td><td>Numerical operations (moving averages, aggregations)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="code-wrap" style="margin-bottom:16px">
+    <div class="code-header">
+      <span class="code-lang"><span class="py-tag">bash</span> – install</span>
+      <button class="copy-btn" onclick="copyCode(this)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        Copy
+      </button>
+    </div>
+    <pre>pip install pandas matplotlib numpy</pre>
+  </div>
+
+  <div class="code-wrap">
+    <div class="code-header">
+      <span class="code-lang"><span class="py-tag">Python</span> – shared config</span>
+      <button class="copy-btn" onclick="copyCode(this)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        Copy
+      </button>
+    </div>
+    <pre>from pathlib import Path
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
+import numpy as np
+
+INPUT_DIR  = Path("data/On-chain-measurements-epoch-537-609")
+OUTPUT_DIR = Path("data/On-chain-visuals-epoch-537-609")
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+COLORS = {
+    'primary_blue': '#3498db',
+    'dark_blue':    '#2c3e50',
+    'green':        '#27ae60',
+    'red':          '#e74c3c',
+    'orange':       '#f39c12',
+    'purple':       '#9b59b6',
+    'teal':         '#1abc9c',
+    'gray':         '#95a5a6',
+    'light_gray':   '#ecf0f1',
+    'amber':        '#d4ac0d',
+}
+
+def apply_style(ax):
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+    ax.yaxis.grid(True, alpha=0.3, color='#E0E0E0')
+    ax.xaxis.grid(False)
+
+def save_chart(fig, name):
+    path = OUTPUT_DIR / f"{name}.png"
+    fig.savefig(path, dpi=100, bbox_inches='tight', facecolor='white')
+    plt.close(fig)
+    print(f"  ✓ Saved {path}")
+    return path
+
+def format_large_number(x, pos):
+    if x >= 1_000_000: return f'{x/1_000_000:.1f}M'
+    if x >= 1_000:     return f'{x/1_000:.0f}K'
+    return str(int(x))</pre>
+  </div>
+</div>
+
+<!-- ─────────────────── SECTION 1: ADA OWNER ─────────────────── -->
+<div class="section" id="ada-owner">
+  <div class="section-header">
+    <span class="section-num">§ 1</span>
+    <h2>Ada Owner Metrics</h2>
+  </div>
+
+  <!-- M3-1-1 -->
+  <div class="metric-card" id="m3-1-1">
+    <div class="metric-card-header">
+      <span class="metric-id">M3-1-1</span>
+      <span class="metric-title">Percentage of Circulating Ada Actively Voting</span>
+      <span class="cat-badge cat-ada">Ada Owner</span>
+    </div>
+    <div class="metric-body">
+      <div class="spec-grid">
+        <div class="spec-item">
+          <div class="spec-label">Visualization Type</div>
+          <div class="spec-value">Multi-line chart with dual Y-axis</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">CSV File</div>
+          <div class="spec-value" style="font-family:var(--mono);font-size:12px;color:var(--amber)">V2 Improved - M3-1-1 Active_voting_pct_537_609.csv</div>
+        </div>
+        <div class="spec-item" style="grid-column:1/-1">
+          <div class="spec-label">CSV Columns</div>
+          <div class="csv-cols">
+            <span class="col-tag">epoch_no</span><span class="col-tag">circulating_ada</span><span class="col-tag">abstain_ada</span><span class="col-tag">no_confidence_ada</span><span class="col-tag">active_drep_ada</span><span class="col-tag">inactive_drep_ada</span><span class="col-tag">not_delegated_ada</span><span class="col-tag">active_voting_pct</span>
+          </div>
+        </div>
+        <div class="spec-item" style="grid-column:1/-1">
+          <div class="spec-label">Axis &amp; Line Spec</div>
+          <div class="spec-value">Left Y: ADA (Billions) · Right Y: Active Voting % (0–25%) · Circulating Supply <span style="color:#2c3e50">■</span> dark-blue · Not Delegated <span style="color:#95a5a6">■</span> gray dashed · Active DRep <span style="color:#27ae60">■</span> green · Abstain <span style="color:#f39c12">■</span> orange · No Confidence <span style="color:#e74c3c">■</span> red · Active Voting % <span style="color:#1abc9c">■</span> teal markers (right axis)</div>
+        </div>
+      </div>
+
+      <div class="chart-preview">
+        <div class="chart-preview-header">
+          <span class="chart-label"><span class="png-tag">PNG</span> Output preview</span>
+        </div>
+        <img src="https://raw.githubusercontent.com/kenerik/Beyond_MVG/main/data/On-chain-visuals-epoch-537-609/ada-owner-metrics/V2%20Improved%20-%20M3-1-1%20Active_voting_pct.png" alt="M3-1-1 ADA Voting Status Breakdown" loading="lazy">
+      </div>
+
+      <div class="steps-heading">Generation Steps</div>
+      <ol class="steps-list">
+        <li><span class="step-n">1</span>Load CSV, convert ADA columns to billions</li>
+        <li><span class="step-n">2</span>Create dual-axis figure (14×8 in) with <code style="font-family:var(--mono);color:var(--amber)">plt.subplots_adjust(bottom=0.15)</code></li>
+        <li><span class="step-n">3</span>Plot stake breakdown lines on left Y-axis</li>
+        <li><span class="step-n">4</span>Plot <code style="font-family:var(--mono);color:var(--amber)">active_voting_pct</code> on right Y-axis (teal, markers)</li>
+        <li><span class="step-n">5</span>Add "Total Supply: 45B ADA" annotation box (top-left)</li>
+        <li><span class="step-n">6</span>Add annotation boxes at epochs 537, 573, and 609</li>
+        <li><span class="step-n">7</span>Add combined legend below chart (<code style="font-family:var(--mono);color:var(--amber)">ncol=4</code>)</li>
+        <li><span class="step-n">8</span>Export as PNG</li>
+      </ol>
+
+      <div class="code-wrap">
+        <div class="code-header">
+          <span class="code-lang"><span class="py-tag">Python</span></span>
+          <button class="copy-btn" onclick="copyCode(this)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+        <pre>def create_active_voting_chart():
+    """Multi-line chart showing ADA voting status breakdown over time"""
+    df = pd.read_csv(INPUT_DIR / 'ada-owner-metrics/V2 Improved - M3-1-1 Active_voting_pct_537_609.csv')
+
+    # Convert to billions
+    for col in ['circulating_ada','active_drep_ada','inactive_drep_ada',
+                'no_confidence_ada','abstain_ada','not_delegated_ada']:
+        df[col.replace('_ada','_b')] = df[col] / 1e9
+
+    fig, ax1 = plt.subplots(figsize=(14, 8))
+    plt.subplots_adjust(bottom=0.15)
+    LW = 2.5
+
+    ax1.plot(df['epoch_no'], df['circulating_b'],  color=COLORS['dark_blue'], linewidth=LW, label='Circulating Supply', alpha=0.7)
+    ax1.plot(df['epoch_no'], df['not_delegated_b'],color=COLORS['gray'],      linewidth=LW, linestyle='--', label='Not Delegated')
+    ax1.plot(df['epoch_no'], df['active_drep_b'],  color=COLORS['green'],     linewidth=LW, label='Active DRep')
+    ax1.plot(df['epoch_no'], df['abstain_b'],      color=COLORS['orange'],    linewidth=LW, label='Abstain')
+    ax1.plot(df['epoch_no'], df['inactive_drep_b'],color=COLORS['purple'],    linewidth=LW, label='Inactive DRep')
+    ax1.plot(df['epoch_no'], df['no_confidence_b'],color=COLORS['red'],       linewidth=LW, label='No Confidence')
+
+    ax1.set_xlabel('Epoch', fontweight='bold')
+    ax1.set_ylabel('ADA (Billions)', fontweight='bold', color=COLORS['dark_blue'])
+    ax1.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f'{x:.0f}B'))
+
+    ax2 = ax1.twinx()
+    ax2.plot(df['epoch_no'], df['active_voting_pct'],
+             color=COLORS['teal'], linewidth=LW, marker='o', markersize=4, label='Active Voting %', zorder=10)
+    ax2.set_ylabel('Active Voting %\n(Active DRep + No Confidence)',
+                   fontweight='bold', color=COLORS['teal'], fontsize=10)
+    ax2.set_ylim(0, max(25, df['active_voting_pct'].max() * 1.3))
+
+    ax1.set_title('ADA Voting Status Breakdown by DRep Delegation', fontsize=16, fontweight='bold', pad=20)
+    fig.text(0.12, 0.95, 'Total Supply: 45B ADA', ha='left', va='top', fontsize=10, fontweight='bold',
+             color=COLORS['dark_blue'],
+             bbox=dict(boxstyle='round,pad=0.3', facecolor=COLORS['light_gray'],
+                       edgecolor=COLORS['dark_blue'], alpha=0.9, linewidth=1.5))
+    apply_style(ax1)
+
+    handles1, labels1 = ax1.get_legend_handles_labels()
+    handles2, labels2 = ax2.get_legend_handles_labels()
+    ax1.legend(handles1+handles2, labels1+labels2,
+               loc='upper center', bbox_to_anchor=(0.5,-0.08), ncol=4, frameon=True)
+
+    return save_chart(fig, 'ada-owner-metrics/V2 Improved - M3-1-1 Active_voting_pct')</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- M3-1-2 -->
+  <div class="metric-card" id="m3-1-2">
+    <div class="metric-card-header">
+      <span class="metric-id">M3-1-2</span>
+      <span class="metric-title">Number of Unique Stake Addresses Delegated to DReps</span>
+      <span class="cat-badge cat-ada">Ada Owner</span>
+    </div>
+    <div class="metric-body">
+      <div class="spec-grid">
+        <div class="spec-item">
+          <div class="spec-label">Visualization Type</div>
+          <div class="spec-value">Time series line chart (cumulative growth) with fill</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">CSV File</div>
+          <div class="spec-value" style="font-family:var(--mono);font-size:12px;color:var(--amber)">M3-1-2 DRep_unique_delegators_537_609.csv</div>
+        </div>
+        <div class="spec-item" style="grid-column:1/-1">
+          <div class="spec-label">CSV Columns</div>
+          <div class="csv-cols">
+            <span class="col-tag">epoch_no</span><span class="col-tag">total_unique_stake_addresses</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-preview">
+        <div class="chart-preview-header">
+          <span class="chart-label"><span class="png-tag">PNG</span> Output preview</span>
+        </div>
+        <img src="https://raw.githubusercontent.com/kenerik/Beyond_MVG/main/data/On-chain-visuals-epoch-537-609/ada-owner-metrics/M3-1-2%20unique_delegators.png" alt="M3-1-2 Unique Delegators" loading="lazy">
+      </div>
+
+      <div class="steps-heading">Generation Steps</div>
+      <ol class="steps-list">
+        <li><span class="step-n">1</span>Load CSV data</li>
+        <li><span class="step-n">2</span>Create figure (12×6 in)</li>
+        <li><span class="step-n">3</span>Fill area under the line (green, alpha 0.3)</li>
+        <li><span class="step-n">4</span>Plot cumulative line in green</li>
+        <li><span class="step-n">5</span>Format Y-axis with <code style="font-family:var(--mono);color:var(--amber)">format_large_number</code></li>
+        <li><span class="step-n">6</span>Annotate final value with growth % relative to first epoch</li>
+        <li><span class="step-n">7</span>Export as PNG</li>
+      </ol>
+
+      <div class="code-wrap">
+        <div class="code-header">
+          <span class="code-lang"><span class="py-tag">Python</span></span>
+          <button class="copy-btn" onclick="copyCode(this)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+        <pre>def create_unique_delegators_chart():
+    """Cumulative growth chart of unique stake addresses delegated to DReps"""
+    df = pd.read_csv(INPUT_DIR / 'ada-owner-metrics/M3-1-2 DRep_unique_delegators_537_609.csv')
+
+    fig, ax = plt.subplots(figsize=(12, 6))
+    ax.fill_between(df['epoch_no'], 0, df['total_unique_stake_addresses'],
+                    alpha=0.3, color=COLORS['green'])
+    ax.plot(df['epoch_no'], df['total_unique_stake_addresses'],
+            color=COLORS['green'], linewidth=2.5)
+
+    ax.set_xlabel('Epoch', fontweight='bold')
+    ax.set_ylabel('Unique Stake Addresses', fontweight='bold')
+    ax.set_title('Unique Stake Addresses Delegated to DReps', fontsize=16, fontweight='bold', pad=20)
+    ax.yaxis.set_major_formatter(ticker.FuncFormatter(format_large_number))
+    ax.set_ylim(0, df['total_unique_stake_addresses'].max() * 1.1)
+    ax.set_xlim(df['epoch_no'].min(), df['epoch_no'].max())
+
+    start_val = df.iloc[0]['total_unique_stake_addresses']
+    end_val   = df.iloc[-1]['total_unique_stake_addresses']
+    growth_pct = ((end_val - start_val) / start_val) * 100
+    ax.annotate(f'{end_val:,.0f}\n(+{growth_pct:.0f}% growth)',
+                xy=(df.iloc[-1]['epoch_no'], end_val),
+                xytext=(-60, 10), textcoords='offset points',
+                fontsize=10, fontweight='bold', color=COLORS['green'],
+                bbox=dict(boxstyle='round,pad=0.3', facecolor='white', edgecolor=COLORS['green'], alpha=0.8),
+                arrowprops=dict(arrowstyle='->', color=COLORS['green']))
+
+    apply_style(ax)
+    plt.tight_layout()
+    return save_chart(fig, 'ada-owner-metrics/M3-1-2 unique_delegators')</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- M3-1-3 -->
+  <div class="metric-card" id="m3-1-3">
+    <div class="metric-card-header">
+      <span class="metric-id">M3-1-3</span>
+      <span class="metric-title">Stickiness of Ada Owner to DRep Delegation</span>
+      <span class="cat-badge cat-ada">Ada Owner</span>
+    </div>
+    <div class="metric-body">
+      <div class="spec-grid">
+        <div class="spec-item">
+          <div class="spec-label">Visualization Type</div>
+          <div class="spec-value">Time series line chart with 5-epoch moving average</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">CSV File</div>
+          <div class="spec-value" style="font-family:var(--mono);font-size:12px;color:var(--amber)">M3-1-3 DRep_stickiness_537_609.csv</div>
+        </div>
+        <div class="spec-item" style="grid-column:1/-1">
+          <div class="spec-label">CSV Columns</div>
+          <div class="csv-cols">
+            <span class="col-tag">epoch_window</span><span class="col-tag">churn_pct</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-preview">
+        <div class="chart-preview-header">
+          <span class="chart-label"><span class="png-tag">PNG</span> Output preview</span>
+        </div>
+        <img src="https://raw.githubusercontent.com/kenerik/Beyond_MVG/main/data/On-chain-visuals-epoch-537-609/ada-owner-metrics/M3-1-3%20drep_stickiness.png" alt="M3-1-3 DRep Stickiness" loading="lazy">
+      </div>
+
+      <div class="steps-heading">Generation Steps</div>
+      <ol class="steps-list">
+        <li><span class="step-n">1</span>Load CSV, parse start epoch from <code style="font-family:var(--mono);color:var(--amber)">epoch_window</code> string (e.g. "537 -> 538")</li>
+        <li><span class="step-n">2</span>Plot raw <code style="font-family:var(--mono);color:var(--amber)">churn_pct</code> as light blue line (alpha 0.5)</li>
+        <li><span class="step-n">3</span>Compute 5-epoch rolling mean and plot as primary line</li>
+        <li><span class="step-n">4</span>Add horizontal dashed line at average churn rate</li>
+        <li><span class="step-n">5</span>Export as PNG</li>
+      </ol>
+
+      <div class="code-wrap">
+        <div class="code-header">
+          <span class="code-lang"><span class="py-tag">Python</span></span>
+          <button class="copy-btn" onclick="copyCode(this)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+        <pre>def create_drep_stickiness_chart():
+    """DRep delegation churn rate with moving average"""
+    df = pd.read_csv(INPUT_DIR / 'ada-owner-metrics/M3-1-3 DRep_stickiness_537_609.csv')
+    df['epoch'] = df['epoch_window'].str.split(' -> ').str[0].astype(int)
+
+    fig, ax = plt.subplots(figsize=(12, 6))
+    ax.plot(df['epoch'], df['churn_pct'],
+            color=COLORS['primary_blue'], linewidth=1, alpha=0.5, label='Raw Data')
+
+    window = 5
+    df['churn_ma'] = df['churn_pct'].rolling(window=window, center=True).mean()
+    ax.plot(df['epoch'], df['churn_ma'],
+            color=COLORS['primary_blue'], linewidth=2.5, label=f'{window}-Epoch Moving Avg')
+
+    avg_churn = df['churn_pct'].mean()
+    ax.axhline(y=avg_churn, color=COLORS['orange'], linestyle=':',
+               linewidth=1.5, alpha=0.7, label=f'Average ({avg_churn:.2f}%)')
+
+    ax.set_xlabel('Epoch', fontweight='bold')
+    ax.set_ylabel('Addresses Changing Delegation (%)', fontweight='bold')
+    ax.set_title('DRep Delegation Change Rate (Stickiness)', fontsize=16, fontweight='bold', pad=20)
+    ax.set_ylim(0, df['churn_pct'].max() * 1.2)
+    ax.legend(loc='upper right', frameon=True)
+    apply_style(ax)
+    plt.tight_layout()
+    return save_chart(fig, 'ada-owner-metrics/M3-1-3 drep_stickiness')</pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────── SECTION 2: DREP ─────────────────── -->
+<div class="section" id="drep">
+  <div class="section-header">
+    <span class="section-num">§ 2</span>
+    <h2>DRep Metrics</h2>
+  </div>
+
+  <!-- M3-2-1 -->
+  <div class="metric-card" id="m3-2-1">
+    <div class="metric-card-header">
+      <span class="metric-id">M3-2-1</span>
+      <span class="metric-title">Gini Coefficient of Delegated Voting Power Among DReps</span>
+      <span class="cat-badge cat-drep">DRep</span>
+    </div>
+    <div class="metric-body">
+      <div class="spec-grid">
+        <div class="spec-item">
+          <div class="spec-label">Visualization Type</div>
+          <div class="spec-value">Time series with real-world &amp; DAO comparison benchmarks</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">CSV File</div>
+          <div class="spec-value" style="font-family:var(--mono);font-size:12px;color:var(--amber)">M3-2-1 DRep_gini_with_noconf_537_609.csv</div>
+        </div>
+        <div class="spec-item" style="grid-column:1/-1">
+          <div class="spec-label">CSV Columns</div>
+          <div class="csv-cols">
+            <span class="col-tag">epoch_no</span><span class="col-tag">gini_coefficient</span>
+          </div>
+        </div>
+        <div class="spec-item" style="grid-column:1/-1">
+          <div class="spec-label">Reference Lines</div>
+          <div class="spec-value">South Africa (Real-World Highest) 0.63 green dashed · DAO Average 0.97 red dashed · Aave 0.98 purple dotted · Uniswap 0.99 orange dotted · Compound 0.99 teal dotted · Shaded zones for Real-World (0.5–0.63), Above Real-World (0.63–0.97), DAO Typical (0.97–1.0)</div>
+        </div>
+      </div>
+
+      <div class="chart-preview">
+        <div class="chart-preview-header">
+          <span class="chart-label"><span class="png-tag">PNG</span> Output preview</span>
+        </div>
+        <img src="https://raw.githubusercontent.com/kenerik/Beyond_MVG/main/data/On-chain-visuals-epoch-537-609/DRep-metrics/V2%20Improved%20-%20M3-2-1_gini_coefficient.png" alt="M3-2-1 Gini Coefficient" loading="lazy">
+      </div>
+
+      <div class="steps-heading">Generation Steps</div>
+      <ol class="steps-list">
+        <li><span class="step-n">1</span>Load CSV data</li>
+        <li><span class="step-n">2</span>Create figure (14×8 in)</li>
+        <li><span class="step-n">3</span>Add shaded zones: Real-World (green), Above Real-World (amber), DAO Typical (red)</li>
+        <li><span class="step-n">4</span>Add reference lines for South Africa and DAO benchmarks</li>
+        <li><span class="step-n">5</span>Plot Cardano DRep Gini line with markers (blue)</li>
+        <li><span class="step-n">6</span>Set Y-axis range 0.5–1.0; annotate latest value</li>
+        <li><span class="step-n">7</span>Add zone labels on the right side</li>
+        <li><span class="step-n">8</span>Export as PNG</li>
+      </ol>
+
+      <div class="code-wrap">
+        <div class="code-header">
+          <span class="code-lang"><span class="py-tag">Python</span></span>
+          <button class="copy-btn" onclick="copyCode(this)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+        <pre>def create_gini_chart():
+    """Gini coefficient time series with real-world and DAO comparisons"""
+    df = pd.read_csv(INPUT_DIR / 'DRep-Metrics/M3-2-1 DRep_gini_with_noconf_537_609.csv')
+
+    fig, ax = plt.subplots(figsize=(14, 8))
+
+    REAL_WORLD_HIGHEST = 0.63   # South Africa
+    DAO_AVERAGE = 0.97; DAO_AAVE = 0.98; DAO_UNISWAP = 0.99; DAO_COMPOUND = 0.99
+
+    # Shaded zones
+    ax.axhspan(0.50, REAL_WORLD_HIGHEST, alpha=0.08, color=COLORS['green'],  label='Real-World Range')
+    ax.axhspan(REAL_WORLD_HIGHEST, DAO_AVERAGE, alpha=0.06, color=COLORS['amber'])
+    ax.axhspan(DAO_AVERAGE, 1.0,  alpha=0.08, color=COLORS['red'],   label='DAO Typical Range')
+
+    # Reference lines
+    ax.axhline(REAL_WORLD_HIGHEST, color=COLORS['green'],  linestyle='--', linewidth=1.5, alpha=0.8, label='South Africa (0.63)')
+    ax.axhline(DAO_AVERAGE,        color=COLORS['red'],    linestyle='--', linewidth=1.5, alpha=0.8, label='DAO Avg (0.97)')
+    ax.axhline(DAO_AAVE,           color=COLORS['purple'], linestyle=':',  linewidth=1.5, alpha=0.7, label='Aave (0.98)')
+    ax.axhline(DAO_UNISWAP,        color=COLORS['orange'], linestyle=':',  linewidth=1.5, alpha=0.7, label='Uniswap (0.99)')
+    ax.axhline(DAO_COMPOUND,       color=COLORS['teal'],   linestyle=':',  linewidth=1.5, alpha=0.7, label='Compound (0.99)')
+
+    # Cardano DRep line
+    ax.plot(df['epoch_no'], df['gini_coefficient'],
+            color=COLORS['primary_blue'], linewidth=2.5, marker='o', markersize=4, label='Cardano DRep Gini', zorder=10)
+
+    ax.set_ylim(0.5, 1.0)
+    ax.set_xlim(df['epoch_no'].min(), df['epoch_no'].max())
+    ax.set_xlabel('Epoch', fontweight='bold')
+    ax.set_ylabel('Gini Coefficient', fontweight='bold')
+    ax.set_title('Gini Coefficient of DRep Voting Power Distribution', fontsize=16, fontweight='bold', pad=20)
+
+    # Zone labels on right edge
+    ax.text(df['epoch_no'].max() + 0.5, 0.56, 'Real-World\nRange', fontsize=9, color=COLORS['green'], va='center')
+    ax.text(df['epoch_no'].max() + 0.5, 0.985,'DAO Average',       fontsize=9, color=COLORS['red'],   va='center')
+
+    ax.legend(loc='lower left', frameon=True, fontsize=9)
+    apply_style(ax)
+    plt.tight_layout()
+    return save_chart(fig, 'DRep-metrics/V2 Improved - M3-2-1_gini_coefficient')</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- M3-2-2 -->
+  <div class="metric-card" id="m3-2-2">
+    <div class="metric-card-header">
+      <span class="metric-id">M3-2-2</span>
+      <span class="metric-title">Nakamoto Coefficient for DRep Power</span>
+      <span class="cat-badge cat-drep">DRep</span>
+    </div>
+    <div class="metric-body">
+      <div class="spec-grid">
+        <div class="spec-item">
+          <div class="spec-label">Visualization Type</div>
+          <div class="spec-value">Step/bar chart with threshold line</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">CSV File</div>
+          <div class="spec-value" style="font-family:var(--mono);font-size:12px;color:var(--amber)">M3-2-2 DRep_nakamoto_537_609.csv</div>
+        </div>
+        <div class="spec-item" style="grid-column:1/-1">
+          <div class="spec-label">CSV Columns</div>
+          <div class="csv-cols">
+            <span class="col-tag">epoch_no</span><span class="col-tag">nakamoto_coefficient</span><span class="col-tag">total_active_dreps</span><span class="col-tag">top_drep_pct</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-preview">
+        <div class="chart-preview-header">
+          <span class="chart-label"><span class="png-tag">PNG</span> Output preview</span>
+        </div>
+        <img src="https://raw.githubusercontent.com/kenerik/Beyond_MVG/main/data/On-chain-visuals-epoch-537-609/DRep-metrics/M3-2-2%20Nakamoto_Coefficient.png" alt="M3-2-2 Nakamoto Coefficient" loading="lazy">
+      </div>
+
+      <div class="steps-heading">Generation Steps</div>
+      <ol class="steps-list">
+        <li><span class="step-n">1</span>Load CSV, extract Nakamoto coefficient per epoch</li>
+        <li><span class="step-n">2</span>Create bar chart (blue) over epoch axis</li>
+        <li><span class="step-n">3</span>Overlay step line for trend visibility</li>
+        <li><span class="step-n">4</span>Annotate min/max values</li>
+        <li><span class="step-n">5</span>Export as PNG</li>
+      </ol>
+
+      <div class="code-wrap">
+        <div class="code-header">
+          <span class="code-lang"><span class="py-tag">Python</span></span>
+          <button class="copy-btn" onclick="copyCode(this)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+        <pre>def create_nakamoto_chart():
+    """Nakamoto coefficient bar chart showing DRep decentralisation over time"""
+    df = pd.read_csv(INPUT_DIR / 'DRep-Metrics/M3-2-2 DRep_nakamoto_537_609.csv')
+    # Keep one row per epoch (the Nakamoto value for that epoch)
+    df_epoch = df.drop_duplicates('epoch_no').sort_values('epoch_no')
+
+    fig, ax = plt.subplots(figsize=(14, 6))
+    ax.bar(df_epoch['epoch_no'], df_epoch['nakamoto_coefficient'],
+           color=COLORS['primary_blue'], alpha=0.7, width=0.8, label='Nakamoto Coefficient')
+    ax.step(df_epoch['epoch_no'], df_epoch['nakamoto_coefficient'],
+            color=COLORS['dark_blue'], linewidth=2, where='mid')
+
+    ax.set_xlabel('Epoch', fontweight='bold')
+    ax.set_ylabel('Nakamoto Coefficient (# DReps needed for >50% vote)', fontweight='bold')
+    ax.set_title('Nakamoto Coefficient – DRep Voting Power', fontsize=16, fontweight='bold', pad=20)
+    ax.yaxis.set_major_locator(ticker.MaxNLocator(integer=True))
+
+    # Annotate peak
+    peak_row = df_epoch.loc[df_epoch['nakamoto_coefficient'].idxmax()]
+    ax.annotate(f"Peak: {int(peak_row['nakamoto_coefficient'])}",
+                xy=(peak_row['epoch_no'], peak_row['nakamoto_coefficient']),
+                xytext=(8, 6), textcoords='offset points',
+                fontsize=9, color=COLORS['dark_blue'], fontweight='bold')
+
+    apply_style(ax)
+    plt.tight_layout()
+    return save_chart(fig, 'DRep-metrics/M3-2-2 Nakamoto_Coefficient')</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- M3-2-3 -->
+  <div class="metric-card" id="m3-2-3">
+    <div class="metric-card-header">
+      <span class="metric-id">M3-2-3</span>
+      <span class="metric-title">Percentage of DRep Votes with Published Rationale</span>
+      <span class="cat-badge cat-drep">DRep</span>
+    </div>
+    <div class="metric-body">
+      <div class="spec-grid">
+        <div class="spec-item">
+          <div class="spec-label">Visualization Type</div>
+          <div class="spec-value">Bar chart (% with rationale per epoch)</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">CSV File</div>
+          <div class="spec-value" style="font-family:var(--mono);font-size:12px;color:var(--amber)">M3-2-3 DRep_rationale_537_609.csv</div>
+        </div>
+        <div class="spec-item" style="grid-column:1/-1">
+          <div class="spec-label">CSV Columns</div>
+          <div class="csv-cols">
+            <span class="col-tag">epoch_no</span><span class="col-tag">total_votes</span><span class="col-tag">votes_with_rationale</span><span class="col-tag">pct_with_rationale</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-preview">
+        <div class="chart-preview-header">
+          <span class="chart-label"><span class="png-tag">PNG</span> Output preview</span>
+        </div>
+        <img src="https://raw.githubusercontent.com/kenerik/Beyond_MVG/main/data/On-chain-visuals-epoch-537-609/DRep-metrics/m3-2-3%20drep_rationale.png" alt="M3-2-3 DRep Rationale" loading="lazy">
+      </div>
+
+      <div class="steps-heading">Generation Steps</div>
+      <ol class="steps-list">
+        <li><span class="step-n">1</span>Load CSV, filter to epoch-level rows</li>
+        <li><span class="step-n">2</span>Plot <code style="font-family:var(--mono);color:var(--amber)">pct_with_rationale</code> as bar chart (teal)</li>
+        <li><span class="step-n">3</span>Add average line (orange dashed)</li>
+        <li><span class="step-n">4</span>Add total-votes secondary axis or annotation boxes</li>
+        <li><span class="step-n">5</span>Export as PNG</li>
+      </ol>
+
+      <div class="code-wrap">
+        <div class="code-header">
+          <span class="code-lang"><span class="py-tag">Python</span></span>
+          <button class="copy-btn" onclick="copyCode(this)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+        <pre>def create_drep_rationale_chart():
+    """Bar chart showing % of DRep votes with published rationale per epoch"""
+    df = pd.read_csv(INPUT_DIR / 'DRep-Metrics/M3-2-3 DRep_rationale_537_609.csv')
+    df = df[df['epoch_no'].notna()].sort_values('epoch_no')
+
+    fig, ax = plt.subplots(figsize=(12, 6))
+    bars = ax.bar(df['epoch_no'], df['pct_with_rationale'],
+                  color=COLORS['teal'], alpha=0.8, width=0.7)
+
+    avg = df['pct_with_rationale'].mean()
+    ax.axhline(avg, color=COLORS['orange'], linestyle='--', linewidth=1.5,
+               label=f'Average ({avg:.1f}%)')
+
+    ax.set_xlabel('Epoch', fontweight='bold')
+    ax.set_ylabel('% Votes with Rationale', fontweight='bold')
+    ax.set_ylim(0, 105)
+    ax.set_title('DRep Votes with Published Rationale (%)', fontsize=16, fontweight='bold', pad=20)
+    ax.legend(frameon=True)
+    apply_style(ax)
+    plt.tight_layout()
+    return save_chart(fig, 'DRep-metrics/m3-2-3 drep_rationale')</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- M3-2-4 -->
+  <div class="metric-card" id="m3-2-4">
+    <div class="metric-card-header">
+      <span class="metric-id">M3-2-4</span>
+      <span class="metric-title">Net Change in Active DRep Count</span>
+      <span class="cat-badge cat-drep">DRep</span>
+    </div>
+    <div class="metric-body">
+      <div class="spec-grid">
+        <div class="spec-item">
+          <div class="spec-label">Visualization Type</div>
+          <div class="spec-value">Diverging bar chart (positive/negative net change) with cumulative line</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">CSV File</div>
+          <div class="spec-value" style="font-family:var(--mono);font-size:12px;color:var(--amber)">M3-2-4 DRep_net_change_537_609.csv</div>
+        </div>
+        <div class="spec-item" style="grid-column:1/-1">
+          <div class="spec-label">CSV Columns</div>
+          <div class="csv-cols">
+            <span class="col-tag">epoch_no</span><span class="col-tag">new_dreps</span><span class="col-tag">expired_dreps</span><span class="col-tag">net_change</span><span class="col-tag">active_drep_count</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-preview">
+        <div class="chart-preview-header">
+          <span class="chart-label"><span class="png-tag">PNG</span> Output preview</span>
+        </div>
+        <img src="https://raw.githubusercontent.com/kenerik/Beyond_MVG/main/data/On-chain-visuals-epoch-537-609/DRep-metrics/M3-2-4%20drep_net_change.png" alt="M3-2-4 DRep Net Change" loading="lazy">
+      </div>
+
+      <div class="steps-heading">Generation Steps</div>
+      <ol class="steps-list">
+        <li><span class="step-n">1</span>Load CSV data</li>
+        <li><span class="step-n">2</span>Create dual-axis figure (12×6 in)</li>
+        <li><span class="step-n">3</span>Plot diverging bars: green for positive net change, red for negative</li>
+        <li><span class="step-n">4</span>Plot cumulative active count on right Y-axis (blue line)</li>
+        <li><span class="step-n">5</span>Add zero baseline and legend</li>
+        <li><span class="step-n">6</span>Export as PNG</li>
+      </ol>
+
+      <div class="code-wrap">
+        <div class="code-header">
+          <span class="code-lang"><span class="py-tag">Python</span></span>
+          <button class="copy-btn" onclick="copyCode(this)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+        <pre>def create_drep_net_change_chart():
+    """Diverging bar chart for net DRep count change with cumulative active line"""
+    df = pd.read_csv(INPUT_DIR / 'DRep-Metrics/M3-2-4 DRep_net_change_537_609.csv')
+
+    fig, ax1 = plt.subplots(figsize=(12, 6))
+    colors = [COLORS['green'] if v >= 0 else COLORS['red'] for v in df['net_change']]
+    ax1.bar(df['epoch_no'], df['net_change'], color=colors, alpha=0.8, width=0.7, label='Net Change')
+    ax1.axhline(0, color='#555', linewidth=0.8)
+    ax1.set_xlabel('Epoch', fontweight='bold')
+    ax1.set_ylabel('Net Change in Active DReps', fontweight='bold')
+
+    ax2 = ax1.twinx()
+    ax2.plot(df['epoch_no'], df['active_drep_count'],
+             color=COLORS['primary_blue'], linewidth=2.5, label='Active DRep Count')
+    ax2.set_ylabel('Total Active DReps', fontweight='bold', color=COLORS['primary_blue'])
+
+    ax1.set_title('Net Change in Active DRep Count', fontsize=16, fontweight='bold', pad=20)
+
+    h1, l1 = ax1.get_legend_handles_labels()
+    h2, l2 = ax2.get_legend_handles_labels()
+    ax1.legend(h1+h2, l1+l2, loc='upper left', frameon=True)
+    apply_style(ax1)
+    plt.tight_layout()
+    return save_chart(fig, 'DRep-metrics/M3-2-4 drep_net_change')</pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────── SECTION 3: SPO ─────────────────── -->
+<div class="section" id="spo">
+  <div class="section-header">
+    <span class="section-num">§ 3</span>
+    <h2>SPO Metrics</h2>
+  </div>
+
+  <!-- M3-3-1 -->
+  <div class="metric-card" id="m3-3-1">
+    <div class="metric-card-header">
+      <span class="metric-id">M3-3-1</span>
+      <span class="metric-title">SPO Engagement in Governance Actions</span>
+      <span class="cat-badge cat-spo">SPO</span>
+    </div>
+    <div class="metric-body">
+      <div class="spec-grid">
+        <div class="spec-item">
+          <div class="spec-label">Visualization Type</div>
+          <div class="spec-value">Grouped bar chart (voted vs eligible SPOs) with participation % line</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">CSV File</div>
+          <div class="spec-value" style="font-family:var(--mono);font-size:12px;color:var(--amber)">V2 Improved - M3-3-1 SPO_engagement_537_609.csv</div>
+        </div>
+        <div class="spec-item" style="grid-column:1/-1">
+          <div class="spec-label">CSV Columns</div>
+          <div class="csv-cols">
+            <span class="col-tag">epoch_no</span><span class="col-tag">spos_voted</span><span class="col-tag">eligible_spos</span><span class="col-tag">participation_pct</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-preview">
+        <div class="chart-preview-header">
+          <span class="chart-label"><span class="png-tag">PNG</span> Output preview</span>
+        </div>
+        <img src="https://raw.githubusercontent.com/kenerik/Beyond_MVG/main/data/On-chain-visuals-epoch-537-609/SPO-metrics/V2%20Improved%20-%20M3-3-1%20spo_engagement.png" alt="M3-3-1 SPO Engagement" loading="lazy">
+      </div>
+
+      <div class="steps-heading">Generation Steps</div>
+      <ol class="steps-list">
+        <li><span class="step-n">1</span>Load CSV, filter to governance-action epochs</li>
+        <li><span class="step-n">2</span>Create dual-axis figure (14×7 in)</li>
+        <li><span class="step-n">3</span>Plot grouped bars: eligible SPOs (light blue) and voted SPOs (blue)</li>
+        <li><span class="step-n">4</span>Overlay <code style="font-family:var(--mono);color:var(--amber)">participation_pct</code> line on right Y-axis (orange)</li>
+        <li><span class="step-n">5</span>Export as PNG</li>
+      </ol>
+
+      <div class="code-wrap">
+        <div class="code-header">
+          <span class="code-lang"><span class="py-tag">Python</span></span>
+          <button class="copy-btn" onclick="copyCode(this)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+        <pre>def create_spo_engagement_chart():
+    """Grouped bar chart showing SPO governance participation per action"""
+    df = pd.read_csv(INPUT_DIR / 'SPO-Metrics/V2 Improved - M3-3-1 SPO_engagement_537_609.csv')
+
+    fig, ax1 = plt.subplots(figsize=(14, 7))
+    width = 0.35
+    x = np.arange(len(df))
+
+    ax1.bar(x - width/2, df['eligible_spos'], width, label='Eligible SPOs',
+            color=COLORS['primary_blue'], alpha=0.4)
+    ax1.bar(x + width/2, df['spos_voted'],   width, label='SPOs Voted',
+            color=COLORS['primary_blue'], alpha=0.9)
+
+    ax1.set_xticks(x)
+    ax1.set_xticklabels(df['epoch_no'], rotation=45, ha='right')
+    ax1.set_xlabel('Epoch / Governance Action', fontweight='bold')
+    ax1.set_ylabel('Number of SPOs', fontweight='bold')
+
+    ax2 = ax1.twinx()
+    ax2.plot(x, df['participation_pct'], color=COLORS['orange'],
+             linewidth=2.5, marker='D', markersize=5, label='Participation %')
+    ax2.set_ylabel('SPO Participation (%)', fontweight='bold', color=COLORS['orange'])
+    ax2.set_ylim(0, df['participation_pct'].max() * 1.3)
+
+    ax1.set_title('SPO Engagement in Governance Actions', fontsize=16, fontweight='bold', pad=20)
+    h1, l1 = ax1.get_legend_handles_labels()
+    h2, l2 = ax2.get_legend_handles_labels()
+    ax1.legend(h1+h2, l1+l2, loc='upper left', frameon=True)
+    apply_style(ax1)
+    plt.tight_layout()
+    return save_chart(fig, 'SPO-metrics/V2 Improved - M3-3-1 spo_engagement')</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- M3-3-2 -->
+  <div class="metric-card" id="m3-3-2">
+    <div class="metric-card-header">
+      <span class="metric-id">M3-3-2</span>
+      <span class="metric-title">Stickiness of Ada Delegated to SPOs</span>
+      <span class="cat-badge cat-spo">SPO</span>
+    </div>
+    <div class="metric-body">
+      <div class="spec-grid">
+        <div class="spec-item">
+          <div class="spec-label">Visualization Type</div>
+          <div class="spec-value">Time series line chart with moving average (delegation churn)</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">CSV File</div>
+          <div class="spec-value" style="font-family:var(--mono);font-size:12px;color:var(--amber)">M3-3-2 SPO_stickiness_537_609.csv</div>
+        </div>
+        <div class="spec-item" style="grid-column:1/-1">
+          <div class="spec-label">CSV Columns</div>
+          <div class="csv-cols">
+            <span class="col-tag">epoch_window</span><span class="col-tag">churn_pct</span><span class="col-tag">churned_stake</span><span class="col-tag">total_stake</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-preview">
+        <div class="chart-preview-header">
+          <span class="chart-label"><span class="png-tag">PNG</span> Output preview</span>
+        </div>
+        <img src="https://raw.githubusercontent.com/kenerik/Beyond_MVG/main/data/On-chain-visuals-epoch-537-609/SPO-metrics/M3-3-2%20spo_stickiness.png" alt="M3-3-2 SPO Stickiness" loading="lazy">
+      </div>
+
+      <div class="steps-heading">Generation Steps</div>
+      <ol class="steps-list">
+        <li><span class="step-n">1</span>Load CSV, parse epoch from window string</li>
+        <li><span class="step-n">2</span>Plot raw churn % (light orange, alpha 0.5)</li>
+        <li><span class="step-n">3</span>Compute 5-epoch rolling mean, plot as primary (orange, 2.5pt)</li>
+        <li><span class="step-n">4</span>Add average dashed reference line</li>
+        <li><span class="step-n">5</span>Export as PNG</li>
+      </ol>
+
+      <div class="code-wrap">
+        <div class="code-header">
+          <span class="code-lang"><span class="py-tag">Python</span></span>
+          <button class="copy-btn" onclick="copyCode(this)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+        <pre>def create_spo_stickiness_chart():
+    """SPO delegation churn rate with moving average"""
+    df = pd.read_csv(INPUT_DIR / 'SPO-Metrics/M3-3-2 SPO_stickiness_537_609.csv')
+    df['epoch'] = df['epoch_window'].str.split(' -> ').str[0].astype(int)
+
+    fig, ax = plt.subplots(figsize=(12, 6))
+    ax.plot(df['epoch'], df['churn_pct'],
+            color=COLORS['orange'], linewidth=1, alpha=0.5, label='Raw Churn %')
+
+    window = 5
+    df['churn_ma'] = df['churn_pct'].rolling(window=window, center=True).mean()
+    ax.plot(df['epoch'], df['churn_ma'],
+            color=COLORS['orange'], linewidth=2.5, label=f'{window}-Epoch Moving Avg')
+
+    avg = df['churn_pct'].mean()
+    ax.axhline(avg, color=COLORS['red'], linestyle=':', linewidth=1.5,
+               alpha=0.7, label=f'Average ({avg:.2f}%)')
+
+    ax.set_xlabel('Epoch', fontweight='bold')
+    ax.set_ylabel('Stake Changing Pool (%)', fontweight='bold')
+    ax.set_title('SPO Delegation Stickiness (Churn Rate)', fontsize=16, fontweight='bold', pad=20)
+    ax.set_ylim(0, df['churn_pct'].max() * 1.2)
+    ax.legend(loc='upper right', frameon=True)
+    apply_style(ax)
+    plt.tight_layout()
+    return save_chart(fig, 'SPO-metrics/M3-3-2 spo_stickiness')</pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────── SECTION 4: CC ─────────────────── -->
+<div class="section" id="cc">
+  <div class="section-header">
+    <span class="section-num">§ 4</span>
+    <h2>Constitutional Committee Metrics</h2>
+  </div>
+
+  <!-- M3-4-1 -->
+  <div class="metric-card" id="m3-4-1">
+    <div class="metric-card-header">
+      <span class="metric-id">M3-4-1</span>
+      <span class="metric-title">Average Constitutional Committee Response Time</span>
+      <span class="cat-badge cat-cc">CC</span>
+    </div>
+    <div class="metric-body">
+      <div class="spec-grid">
+        <div class="spec-item">
+          <div class="spec-label">Visualization Type</div>
+          <div class="spec-value">Horizontal bar chart (days to respond) by governance action</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">CSV File</div>
+          <div class="spec-value" style="font-family:var(--mono);font-size:12px;color:var(--amber)">M3-4-1CC_response_time_537_609.csv</div>
+        </div>
+        <div class="spec-item" style="grid-column:1/-1">
+          <div class="spec-label">CSV Columns</div>
+          <div class="csv-cols">
+            <span class="col-tag">action_category</span><span class="col-tag">action_count</span><span class="col-tag">median_first_response_days</span><span class="col-tag">median_last_response_days</span><span class="col-tag">avg_cc_participation_pct</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-preview">
+        <div class="chart-preview-header">
+          <span class="chart-label"><span class="png-tag">PNG</span> Output preview</span>
+        </div>
+        <img src="https://raw.githubusercontent.com/kenerik/Beyond_MVG/main/data/On-chain-visuals-epoch-537-609/CC-metrics/M3-4-1%20cc_response_time.png" alt="M3-4-1 CC Response Time" loading="lazy">
+      </div>
+
+      <div class="steps-heading">Generation Steps</div>
+      <ol class="steps-list">
+        <li><span class="step-n">1</span>Load CSV, filter to <code style="font-family:var(--mono);color:var(--amber)">action_category != 'ALL_ACTIONS'</code></li>
+        <li><span class="step-n">2</span>Create horizontal bar chart sorted by median first response (ascending)</li>
+        <li><span class="step-n">3</span>Add second set of bars (or error bars) for last response time</li>
+        <li><span class="step-n">4</span>Annotate participation % on each bar</li>
+        <li><span class="step-n">5</span>Export as PNG</li>
+      </ol>
+
+      <div class="code-wrap">
+        <div class="code-header">
+          <span class="code-lang"><span class="py-tag">Python</span></span>
+          <button class="copy-btn" onclick="copyCode(this)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+        <pre>def create_cc_response_time_chart():
+    """Horizontal bar chart of CC median response time by governance action type"""
+    df = pd.read_csv(INPUT_DIR / 'CC-Metrics/M3-4-1CC_response_time_537_609.csv')
+    df = df[df['action_category'] != 'ALL_ACTIONS'].sort_values('median_first_response_days')
+
+    fig, ax = plt.subplots(figsize=(12, 6))
+    y = np.arange(len(df))
+    height = 0.35
+
+    ax.barh(y + height/2, df['median_last_response_days'],  height, label='Median Last Response',
+            color=COLORS['primary_blue'], alpha=0.5)
+    ax.barh(y - height/2, df['median_first_response_days'], height, label='Median First Response',
+            color=COLORS['primary_blue'], alpha=0.9)
+
+    ax.set_yticks(y)
+    ax.set_yticklabels(df['action_category'])
+    ax.set_xlabel('Days from Submission to CC Vote', fontweight='bold')
+    ax.set_title('Constitutional Committee Response Time by Action Type',
+                 fontsize=16, fontweight='bold', pad=20)
+
+    # Annotate participation
+    for i, (_, row) in enumerate(df.iterrows()):
+        ax.text(row['median_last_response_days'] + 0.5, i + height/2,
+                f"{row['avg_cc_participation_pct']:.0f}% participation",
+                va='center', fontsize=9, color=COLORS['dark_blue'])
+
+    ax.legend(loc='lower right', frameon=True)
+    apply_style(ax)
+    plt.tight_layout()
+    return save_chart(fig, 'CC-metrics/M3-4-1 cc_response_time')</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- M3-4-2 -->
+  <div class="metric-card" id="m3-4-2">
+    <div class="metric-card-header">
+      <span class="metric-id">M3-4-2</span>
+      <span class="metric-title">Percentage of CC Votes with Published Rationale</span>
+      <span class="cat-badge cat-cc">CC</span>
+    </div>
+    <div class="metric-body">
+      <div class="spec-grid">
+        <div class="spec-item">
+          <div class="spec-label">Visualization Type</div>
+          <div class="spec-value">Stacked bar chart (with/without rationale) by vote type</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">CSV File</div>
+          <div class="spec-value" style="font-family:var(--mono);font-size:12px;color:var(--amber)">M3-4-2 CC_rationale_537_609.csv</div>
+        </div>
+        <div class="spec-item" style="grid-column:1/-1">
+          <div class="spec-label">CSV Columns</div>
+          <div class="csv-cols">
+            <span class="col-tag">category</span><span class="col-tag">total_votes</span><span class="col-tag">votes_with_rationale</span><span class="col-tag">pct_with_rationale</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-preview">
+        <div class="chart-preview-header">
+          <span class="chart-label"><span class="png-tag">PNG</span> Output preview</span>
+        </div>
+        <img src="https://raw.githubusercontent.com/kenerik/Beyond_MVG/main/data/On-chain-visuals-epoch-537-609/CC-metrics/M3-4-2%20cc_rationale.png" alt="M3-4-2 CC Rationale" loading="lazy">
+      </div>
+
+      <div class="steps-heading">Generation Steps</div>
+      <ol class="steps-list">
+        <li><span class="step-n">1</span>Load CSV, filter to vote-type categories (exclude ALL_VOTES)</li>
+        <li><span class="step-n">2</span>Compute votes without rationale = total − with_rationale</li>
+        <li><span class="step-n">3</span>Plot stacked horizontal bars: with rationale (teal), without (red)</li>
+        <li><span class="step-n">4</span>Annotate percentage on each bar</li>
+        <li><span class="step-n">5</span>Export as PNG</li>
+      </ol>
+
+      <div class="code-wrap">
+        <div class="code-header">
+          <span class="code-lang"><span class="py-tag">Python</span></span>
+          <button class="copy-btn" onclick="copyCode(this)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+        <pre>def create_cc_rationale_chart():
+    """Stacked bar chart of CC votes with/without rationale by vote type"""
+    df = pd.read_csv(INPUT_DIR / 'CC-Metrics/M3-4-2 CC_rationale_537_609.csv')
+    df = df[df['category'] != 'ALL_VOTES'].copy()
+    df['without'] = df['total_votes'] - df['votes_with_rationale']
+
+    fig, ax = plt.subplots(figsize=(12, 6))
+    y = np.arange(len(df))
+
+    ax.barh(y, df['votes_with_rationale'], label='With Rationale',  color=COLORS['teal'], alpha=0.9)
+    ax.barh(y, df['without'], left=df['votes_with_rationale'], label='Without Rationale', color=COLORS['red'], alpha=0.7)
+
+    ax.set_yticks(y)
+    ax.set_yticklabels(df['category'])
+    ax.set_xlabel('Number of Votes', fontweight='bold')
+    ax.set_title('CC Votes with Published Rationale by Vote Type', fontsize=16, fontweight='bold', pad=20)
+
+    for i, row in enumerate(df.itertuples()):
+        ax.text(row.total_votes + 0.3, i, f'{row.pct_with_rationale:.0f}%',
+                va='center', fontsize=10, fontweight='bold', color=COLORS['dark_blue'])
+
+    ax.legend(loc='lower right', frameon=True)
+    apply_style(ax)
+    plt.tight_layout()
+    return save_chart(fig, 'CC-metrics/M3-4-2 cc_rationale')</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- M3-4-3 -->
+  <div class="metric-card" id="m3-4-3">
+    <div class="metric-card-header">
+      <span class="metric-id">M3-4-3</span>
+      <span class="metric-title">Constitutional Committee Abstain Rate</span>
+      <span class="cat-badge cat-cc">CC</span>
+    </div>
+    <div class="metric-body">
+      <div class="spec-grid">
+        <div class="spec-item">
+          <div class="spec-label">Visualization Type</div>
+          <div class="spec-value">Stacked bar chart by epoch (Yes / No / Abstain) with abstain % line</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">CSV File</div>
+          <div class="spec-value" style="font-family:var(--mono);font-size:12px;color:var(--amber)">M3-4-3 CC_abstain_rate_537_609.csv</div>
+        </div>
+        <div class="spec-item" style="grid-column:1/-1">
+          <div class="spec-label">CSV Columns</div>
+          <div class="csv-cols">
+            <span class="col-tag">category</span><span class="col-tag">epoch_no</span><span class="col-tag">total_votes_cast</span><span class="col-tag">yes_count</span><span class="col-tag">no_count</span><span class="col-tag">abstain_count</span><span class="col-tag">abstain_rate_pct</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-preview">
+        <div class="chart-preview-header">
+          <span class="chart-label"><span class="png-tag">PNG</span> Output preview</span>
+        </div>
+        <img src="https://raw.githubusercontent.com/kenerik/Beyond_MVG/main/data/On-chain-visuals-epoch-537-609/CC-metrics/M3-4-3%20cc_abstain_rate.png" alt="M3-4-3 CC Abstain Rate" loading="lazy">
+      </div>
+
+      <div class="steps-heading">Generation Steps</div>
+      <ol class="steps-list">
+        <li><span class="step-n">1</span>Load CSV, filter to <code style="font-family:var(--mono);color:var(--amber)">category LIKE 'Epoch:%'</code> rows, sort by epoch</li>
+        <li><span class="step-n">2</span>Create dual-axis figure (14×7 in)</li>
+        <li><span class="step-n">3</span>Plot stacked bars: Yes (green), No (red), Abstain (orange) on left axis</li>
+        <li><span class="step-n">4</span>Overlay <code style="font-family:var(--mono);color:var(--amber)">abstain_rate_pct</code> line on right Y-axis (purple, markers)</li>
+        <li><span class="step-n">5</span>Export as PNG</li>
+      </ol>
+
+      <div class="code-wrap">
+        <div class="code-header">
+          <span class="code-lang"><span class="py-tag">Python</span></span>
+          <button class="copy-btn" onclick="copyCode(this)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+        <pre>def create_cc_abstain_chart():
+    """Stacked bar (Yes/No/Abstain) with abstain rate % overlay per epoch"""
+    df = pd.read_csv(INPUT_DIR / 'CC-Metrics/M3-4-3 CC_abstain_rate_537_609.csv')
+    df = df[df['category'].str.startswith('Epoch:')].copy()
+    df = df.sort_values('epoch_no')
+
+    fig, ax1 = plt.subplots(figsize=(14, 7))
+    x = np.arange(len(df))
+
+    ax1.bar(x, df['yes_count'],     label='Yes (Constitutional)',   color=COLORS['green'], alpha=0.85)
+    ax1.bar(x, df['no_count'],      bottom=df['yes_count'],         label='No (Unconstitutional)', color=COLORS['red'],    alpha=0.85)
+    ax1.bar(x, df['abstain_count'], bottom=df['yes_count']+df['no_count'], label='Abstain', color=COLORS['orange'], alpha=0.85)
+
+    ax1.set_xticks(x)
+    ax1.set_xticklabels(df['epoch_no'].astype(int), rotation=45, ha='right')
+    ax1.set_xlabel('Epoch', fontweight='bold')
+    ax1.set_ylabel('Number of CC Votes', fontweight='bold')
+
+    ax2 = ax1.twinx()
+    ax2.plot(x, df['abstain_rate_pct'], color=COLORS['purple'],
+             linewidth=2.5, marker='o', markersize=5, label='Abstain Rate %', zorder=10)
+    ax2.set_ylabel('Abstain Rate (%)', fontweight='bold', color=COLORS['purple'])
+    ax2.set_ylim(0, df['abstain_rate_pct'].max() * 2)
+
+    ax1.set_title('Constitutional Committee Vote Breakdown &amp; Abstain Rate',
+                  fontsize=16, fontweight='bold', pad=20)
+    h1, l1 = ax1.get_legend_handles_labels()
+    h2, l2 = ax2.get_legend_handles_labels()
+    ax1.legend(h1+h2, l1+l2, loc='upper left', frameon=True)
+    apply_style(ax1)
+    plt.tight_layout()
+    return save_chart(fig, 'CC-metrics/M3-4-3 cc_abstain_rate')</pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────── STYLING STANDARDS ─────────────────── -->
+<div class="section" id="styling">
+  <div class="section-header">
+    <span class="section-num">§</span>
+    <h2>Styling Standards</h2>
+  </div>
+
+  <table class="deps-table">
+    <thead><tr><th>Property</th><th>Value</th></tr></thead>
+    <tbody>
+      <tr><td>Font</td><td>Sans-serif — Arial or Helvetica</td></tr>
+      <tr><td>Title</td><td>14pt bold</td></tr>
+      <tr><td>Axis labels</td><td>11pt</td></tr>
+      <tr><td>Legend</td><td>10pt</td></tr>
+      <tr><td>Grid</td><td>Light gray <code style="font-family:var(--mono);color:var(--amber)">#E0E0E0</code>, horizontal lines only</td></tr>
+      <tr><td>Background</td><td>White</td></tr>
+      <tr><td>Primary line weight</td><td>2pt · reference lines 1pt dashed</td></tr>
+      <tr><td>Output dimensions</td><td>800 × 500 px (landscape), <code style="font-family:var(--mono);color:var(--amber)">dpi=100</code></td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div><!-- /wrap -->
+
+<script>
+function copyCode(btn) {
+  const pre = btn.closest('.code-wrap').querySelector('pre');
+  navigator.clipboard.writeText(pre.textContent.trim()).then(() => {
+    btn.classList.add('copied');
+    btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy';
+    }, 2000);
+  });
+}
+window.addEventListener('scroll', () => {
+  const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  document.getElementById('prog').style.width = pct + '%';
+});
+</script>
+</body>
+</html>
