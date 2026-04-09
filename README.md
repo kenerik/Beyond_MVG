@@ -107,7 +107,7 @@ Step-by-step technical guidance for calculating each metric. Intended for toolin
 
 ### 3. [Click here for technical manual on how to make visual from data ](https://kenerik.github.io/Beyond_MVG/on-chain-data-visualization.html)
 Step-by-step technical guidance for calculating and generate visuals for each metric.
-Intended for tooling providers and technical community members who want to independently implement or verify measurements.
+Intended for tooling providers and technical community members who want to independently implement.
 
 ### 4. [State of Governance Report Outline](docs/State_of_Governance_Report_Outline.pdf)
 The template and structure for producing periodic State of Cardano Governance reports using the measurement framework. Defines sections covering methodology, key findings by GMF category, governance action analysis, and forward path recommendations.
