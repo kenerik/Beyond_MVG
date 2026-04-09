@@ -105,7 +105,7 @@ The foundational research document presenting the rationale and theoretical basi
 ### 2. [Click here for the Interactive Technical Manual](https://kenerik.github.io/Beyond_MVG/cardano-node-setup.html)
 Step-by-step technical guidance for calculating each metric. Intended for tooling providers and technical community members who want to independently implement or verify measurements. Covers data sources, SQL query logic, and visualization specifications for all 12 defined metrics.
 
-### 3. [Click here for technical manual on how to make visual from data ](on-chain-data-visualization.html)
+### 3. [Click here for technical manual on how to make visual from data ](https://kenerik.github.io/Beyond_MVG/on-chain-data-visualization.html)
 Step-by-step technical guidance for calculating and generate visuals for each metric.
 Intended for tooling providers and technical community members who want to independently implement or verify measurements.
 
