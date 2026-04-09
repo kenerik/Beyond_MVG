@@ -50,7 +50,7 @@ Beyond_MVG/
 │   ├── M1-1D_ State of Governance - Report Outline
 │   ├── M1-1D_ State of Governance Measurement Framework
 │   └── cardano-node-setup & Query DbSync - step by step   # Node setup reference
-│   └── Plan for creating visualizations step by step (TBD according to feedback)
+│   └── Visualization Derivation Plan - step by step (TBD according to feedback)
 │
 ├── data/                                         # Data results from report queries and generated visualizations
 │   ├── On-chain-measurements-epoch-537-609/      # Raw CSV metric data (epochs 537–609)
@@ -64,6 +64,10 @@ Beyond_MVG/
 │   │   ├── DRep-metrics/
 │   │   ├── SPO-metrics/
 │   │   └── CC-metrics/
+│   │
+│   ├── Interview notes                           # Notes from carried out interviews
+│   │
+│   ├── Surveys response                          # Response from surveys
 │   │
 │   └── workshops/
 │       └── ms2-workshops-surveys-interviews/     # MS2 qualitative data
