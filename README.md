@@ -3,7 +3,7 @@
 
 > A research initiative commissioned by Cardano DReps and delivered by Input Output Group (IOG) and Cardano Community Members.
 
-[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
 [![Status](https://img.shields.io/badge/status-active-brightgreen)](https://github.com/kenerik/Beyond_MVG)
 [![Cardano](https://img.shields.io/badge/Cardano-CIP--1694-blue)](https://cips.cardano.org/cip/CIP-1694)
 [![Documents](https://img.shields.io/badge/documents-3-orange)](docs/)
