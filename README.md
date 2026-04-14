@@ -170,7 +170,11 @@ We welcome contributions from the Cardano community. Please read [CONTRIBUTING.m
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This repository contains materials under two separate licenses:
+
+Code and tooling (all files in /src, /scripts, and related directories): Licensed under the Apache 2.0 License.
+Research report and data (all files in /docs and /data): Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
+Under CC BY-NC-SA 4.0, you are free to share and adapt the research report and data for non-commercial purposes, provided you give appropriate credit to Input Output Global, Inc. (IOG) and distribute any adaptations under the same license
 
 ```
   ____                             _   __  ____      _______ 
